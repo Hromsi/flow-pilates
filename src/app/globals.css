@@ -152,4 +152,28 @@
       linear-gradient(to bottom, rgb(21 26 21 / 0.06) 1px, transparent 1px);
     background-size: 30px 30px;
   }
+
+  .marquee-track {
+    animation: marquee 34s linear infinite;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 0.5rem));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .marquee-track {
+    animation: none;
+  }
 }

@@ -2,10 +2,11 @@
   "name": "flowpilates",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "npm@10.8.2",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "dev": "node ./scripts/next-run.mjs dev",
+    "build": "node ./scripts/next-run.mjs build",
+    "start": "node ./scripts/next-run.mjs start",
     "lint": "eslint"
   },
   "dependencies": {
