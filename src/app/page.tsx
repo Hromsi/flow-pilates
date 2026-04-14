@@ -1,16 +1,14 @@
 import Image from "next/image";
 import {
+  ArrowUpRight,
+  Check,
   Clock3,
-  HeartPulse,
   Mail,
   MapPin,
   MoveRight,
   Phone,
-  PlayCircle,
   Send,
   Sparkles,
-  Users,
-  Waves,
 } from "lucide-react";
 
 import { buttonVariants } from "@/components/ui/button";
@@ -21,95 +19,57 @@ const bookingLink =
 const whatsappLink =
   "https://api.whatsapp.com/send/?phone=79857148630&text=Здравствуйте%21+Хочу+записаться&type=phone_number&app_absent=0";
 const telegramLink = "https://t.me/+fQooG2dMMcc4NmRi";
-const videoLink =
-  "https://vkvideo.ru/video72587992_456239758?list=ln-2KATAulJ47pVPb6xNW";
 const phoneLink = "tel:+79857148630";
 const mailLink = "mailto:Keit-Obninsk@yandex.ru";
+const mapsLink =
+  "https://yandex.ru/maps/?text=Обнинск%2C%20пр-т%20Ленина%20137%20корп.%204%20пом.%20254";
+const termsLink = "http://flowpilates.ru/page77944686.html";
+const heroVideoLink =
+  "https://vkvideo.ru/video72587992_456239758?list=ln-2KATAulJ47pVPb6xNW";
+const heroVideoBackgroundUrl =
+  "https://vkvideo.ru/video_ext.php?oid=72587992&id=456239758&hash=771ed801340d7f02&hd=2&autoplay=1&mute=1&muted=1&loop=1&controls=0";
 
 const navigation = [
   { label: "Студия", href: "#studio" },
-  { label: "Форматы", href: "#programs" },
-  { label: "Стоимость", href: "#pricing" },
+  { label: "Форматы", href: "#formats" },
+  { label: "Тарифы", href: "#pricing" },
   { label: "Контакты", href: "#contacts" },
-];
-
-const marqueeWords = [
-  "reformer",
-  "mindful movement",
-  "spine care",
-  "personal practice",
-  "split sessions",
-  "teens",
-  "55 minutes",
-  "flow pilates",
 ];
 
 const heroStats = [
   {
     value: "55 минут",
-    label: "бережной точной практики",
+    label: "бережной и осознанной практики",
+  },
+  {
+    value: "с 2018",
+    label: "опыт преподавания и персональной работы",
   },
   {
     value: "5 форматов",
     label: "от реформера до подростковых занятий",
-  },
-  {
-    value: "с 2018",
-    label: "опыт преподавания и персональная работа",
   },
 ];
 
 const founderFacts = [
   "Высшее спортивное образование (Российский Университет Спорта ГЦОЛИФК).",
   "Опыт преподавания с 2018 года.",
-  "Работа с групповыми программами на реформере в Москве.",
+  "Работала с группами на реформере в г. Москве.",
   "Сертифицированный специалист международной школы пилатеса Balance Body.",
-];
-
-const pillars = [
-  {
-    title: "Контроль",
-    text: "Тело учится двигаться точнее, без суеты и ненужного напряжения.",
-    icon: HeartPulse,
-  },
-  {
-    title: "Поддержка",
-    text: "Нагрузка адаптируется под уровень подготовки, задачи и самочувствие.",
-    icon: Users,
-  },
-  {
-    title: "Текучесть",
-    text: "Сила, мобильность и дыхание соединяются в один естественный ритм.",
-    icon: Waves,
-  },
-];
-
-const stages = [
-  {
-    index: "01",
-    title: "Сначала услышать тело",
-    text: "Старт идет не от шаблона, а от вашего состояния, осанки, дыхания и реальной цели.",
-  },
-  {
-    index: "02",
-    title: "Потом собрать опору",
-    text: "Через реформер, мат и малое оборудование возвращается ощущение центра, устойчивости и длины в движении.",
-  },
-  {
-    index: "03",
-    title: "И только потом усиливать",
-    text: "Сила наращивается бережно, чтобы ее хотелось сохранять не пару недель, а надолго.",
-  },
 ];
 
 const featuredProgram = {
   title: "Тренировки на реформере",
-  subtitle: "Флагманский формат студии",
+  subtitle: "Флагманское направление студии",
   description:
-    "Первая точка входа в Flow Pilates для тех, кто хочет выстроить сильное, вытянутое и устойчивое тело без ударной нагрузки. Реформер помогает почувствовать технику, увидеть глубину движения и сделать практику по-настоящему осознанной.",
+    "Система упражнений, выполняемых на большом оборудовании пилатеса - Reformer.",
+  points: [
+    "Тренировка направлена на укрепление всех частей тела и применима к любому виду активности. Помогает улучшить физическую форму, обрести гармонию тела и духа, повысить общую выносливость без вреда для здоровья.",
+    "Стретчинг + Реформер объединяет упражнения на гибкость с использованием реформера и техники самомассажа (МФР).",
+  ],
+  note: "55 минут • любой уровень",
   image:
     "https://static.tildacdn.com/tild3035-6637-4336-a236-666633656665/84748.png",
-  note: "55 минут • любой уровень • запись онлайн",
 };
 
 const programs = [
@@ -117,7 +77,9 @@ const programs = [
     index: "02",
     title: "Пилатес с малым оборудованием",
     description:
-      "Мат, ролл, кольцо, лента и мяч помогают включить глубокие мышцы корпуса, улучшить осанку и добавить телу спокойную силу.",
+      "Система упражнений, выполняемых на коврике. Направлена на проработку глубоких мышц живота и спины, улучшение осанки и снижение риска травм.",
+    detail:
+      "На тренировке используется малое оборудование пилатеса: изотоническое кольцо, ролл, лента и мяч.",
     image:
       "https://static.tildacdn.com/tild6331-3236-4335-b564-343434383532/2320672.png",
     action: "Выбрать время",
@@ -127,7 +89,9 @@ const programs = [
     index: "03",
     title: "Персональные тренировки",
     description:
-      "Формат для точной настройки техники, работы с индивидуальными задачами и бережного прогресса в своем темпе.",
+      "Тренировка один на один с тренером, полностью сфокусированная на ваши цели и задачи.",
+    detail:
+      "Программа выстраивается с учетом текущего уровня подготовки, особенностей здоровья и пожеланий.",
     image:
       "https://static.tildacdn.com/tild6231-3637-4266-a461-373030656439/a9747d5b776b1bf5e1e4.png",
     action: "Написать администратору",
@@ -137,7 +101,9 @@ const programs = [
     index: "04",
     title: "Сплит-тренировки",
     description:
-      "Парная практика для двоих, где сохраняется внимание тренера и появляется дополнительная динамика совместного движения.",
+      "Индивидуальная программа, разработанная для занятий в паре, с профессиональным контролем и поддержкой тренера.",
+    detail:
+      "Формат учитывает уровень подготовки, особенности здоровья и пожелания обоих участников.",
     image:
       "https://static.tildacdn.com/tild6335-3433-4236-b363-366232396562/2963527.png",
     action: "Обсудить формат",
@@ -145,9 +111,11 @@ const programs = [
   },
   {
     index: "05",
-    title: "Пилатес для подростков 12–16",
+    title: "Пилатес для подростков 12-16",
     description:
-      "Укрепляет опорно-двигательный аппарат, развивает координацию и делает физическую активность понятной и спокойной привычкой.",
+      "Занятия направлены на укрепление опорно-двигательного аппарата и развитие физических качеств.",
+    detail:
+      "Первая часть тренировки проходит на коврике, вторая - на реформере. Формат помогает снизить уровень стресса и привить любовь к физической активности.",
     image:
       "https://static.tildacdn.com/tild3663-3736-4138-a537-646361343264/9208888.png",
     action: "Записать подростка",
@@ -158,74 +126,74 @@ const programs = [
 const prices = [
   {
     title: "Пилатес с малым оборудованием",
-    price: "800 ₽",
-    note: "разовое занятие",
+    price: "800 руб.",
+    note: "Разовое занятие",
     items: [
-      "4 тренировки — 3 000 ₽",
-      "6 тренировок — 4 200 ₽",
-      "8 тренировок — 5 200 ₽",
-      "12 тренировок — 7 200 ₽",
+      "Абонемент на 4 групповых тренировки - 3 000 руб.",
+      "Абонемент на 6 групповых тренировок - 4 200 руб.",
+      "Абонемент на 8 групповых тренировок - 5 200 руб.",
+      "Абонемент на 12 групповых тренировок - 7 200 руб.",
     ],
     href: bookingLink,
   },
   {
-    title: "Реформер",
-    price: "1 500 ₽",
-    note: "разовое занятие",
+    title: "Тренировки на реформере",
+    price: "1 500 руб.",
+    note: "Разовое занятие",
     items: [
-      "4 тренировки — 5 800 ₽",
-      "6 тренировок — 8 400 ₽",
-      "8 тренировок — 10 400 ₽",
-      "12 тренировок — 15 000 ₽",
+      "Абонемент на 4 групповые тренировки - 5 800 руб.",
+      "Абонемент на 6 групповых тренировок - 8 400 руб.",
+      "Абонемент на 8 групповых тренировок - 10 400 руб.",
+      "Абонемент на 12 групповых тренировок - 15 000 руб.",
     ],
     href: bookingLink,
     highlight: true,
   },
   {
     title: "Персональные тренировки",
-    price: "2 800 ₽",
-    note: "по предварительной записи",
+    price: "2 800 руб.",
+    note: "По предварительной записи у администратора",
     items: [
-      "4 тренировки — 10 800 ₽",
-      "6 тренировок — 15 300 ₽",
-      "8 тренировок — 19 600 ₽",
-      "12 тренировок — 28 800 ₽",
+      "Абонемент на 4 персональных тренировки - 10 800 руб.",
+      "Абонемент на 6 персональных тренировок - 15 300 руб.",
+      "Абонемент на 8 персональных тренировок - 19 600 руб.",
+      "Абонемент на 12 персональных тренировок - 28 800 руб.",
     ],
     href: whatsappLink,
   },
   {
-    title: "Сплит-тренировки",
-    price: "4 400 ₽",
-    note: "для двоих",
+    title: "Сплит-тренировки (2 чел.)",
+    price: "4 400 руб.",
+    note: "По предварительной записи у администратора",
     items: [
-      "4 тренировки — 17 200 ₽",
-      "6 тренировок — 25 200 ₽",
-      "8 тренировок — 32 000 ₽",
-      "12 тренировок — 46 800 ₽",
+      "Абонемент на 4 групповых тренировки - 17 200 руб.",
+      "Абонемент на 6 групповых тренировок - 25 200 руб.",
+      "Абонемент на 8 групповых тренировок - 32 000 руб.",
+      "Абонемент на 12 групповых тренировок - 46 800 руб.",
     ],
     href: whatsappLink,
   },
   {
-    title: "Подростковые тренировки",
-    price: "1 100 ₽",
-    note: "разовое занятие",
+    title: "Тренировки для подростков",
+    price: "1 100 руб.",
+    note: "Разовое занятие",
     items: [
-      "4 тренировки — 4 200 ₽",
-      "6 тренировок — 6 200 ₽",
-      "8 тренировок — 8 200 ₽",
-      "12 тренировок — 12 200 ₽",
+      "Абонемент на 4 групповые тренировки - 4 200 руб.",
+      "Абонемент на 6 групповых тренировок - 6 200 руб.",
+      "Абонемент на 8 групповых тренировок - 8 200 руб.",
+      "Абонемент на 12 групповых тренировок - 12 200 руб.",
     ],
     href: bookingLink,
   },
   {
     title: "Смешанный абонемент",
-    price: "от 4 200 ₽",
-    note: "реформер + малое оборудование",
+    price: "от 4 200 руб.",
+    note: "Реформер + пилатес МО",
     items: [
-      "2+2 — 4 200 ₽",
-      "3+3 — 6 200 ₽",
-      "5+3 — 8 200 ₽",
-      "8+4 — 12 200 ₽",
+      "Абонемент 2+2 (реформер + пилатес МО) - 4 200 руб.",
+      "Абонемент 3+3 (реформер + пилатес МО) - 6 200 руб.",
+      "Абонемент 5+3 (реформер + пилатес МО) - 8 200 руб.",
+      "Абонемент 8+4 (реформер + пилатес МО) - 12 200 руб.",
     ],
     href: bookingLink,
   },
@@ -247,7 +215,7 @@ const contacts = [
   {
     label: "Студия",
     value: "Обнинск, пр-т Ленина, 137, корп. 4, пом. 254",
-    href: "https://yandex.ru/maps/?text=Обнинск%2C%20пр-т%20Ленина%20137%20корп.%204%20пом.%20254",
+    href: mapsLink,
     icon: MapPin,
   },
 ];
@@ -265,15 +233,25 @@ export default function Home() {
             sizes="100vw"
             className="object-cover object-center"
           />
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,12,11,0.9)_0%,rgba(10,12,11,0.68)_42%,rgba(10,12,11,0.48)_100%)]" />
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,12,11,0.18)_0%,rgba(10,12,11,0.44)_48%,rgba(10,12,11,0.86)_100%)]" />
+          <div className="absolute inset-0 hidden overflow-hidden motion-safe:block">
+            <iframe
+              src={heroVideoBackgroundUrl}
+              title="Фоновое видео студии Flow Pilates"
+              aria-hidden="true"
+              tabIndex={-1}
+              allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
+              className="pointer-events-none absolute left-1/2 top-1/2 h-[145%] w-[160vw] min-w-[120rem] -translate-x-1/2 -translate-y-1/2 opacity-80"
+            />
+          </div>
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,12,11,0.9)_0%,rgba(10,12,11,0.7)_42%,rgba(10,12,11,0.55)_100%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,12,11,0.24)_0%,rgba(10,12,11,0.4)_48%,rgba(10,12,11,0.88)_100%)]" />
         </div>
 
         <div className="section-shell relative flex min-h-[86svh] flex-col pb-8 pt-4 sm:min-h-[88svh] lg:min-h-[90svh]">
           <div className="flex flex-wrap items-center justify-between gap-4 border-b border-white/10 py-3 text-[11px] uppercase tracking-[0.28em] text-white/68">
             <div className="flex flex-wrap items-center gap-4 sm:gap-6">
               <span>Обнинск</span>
-              <span>Mindful movement studio</span>
+              <span>Студия здорового тела</span>
             </div>
             <div className="flex items-center gap-4 sm:gap-6">
               <a href={telegramLink} target="_blank" rel="noreferrer">
@@ -324,31 +302,38 @@ export default function Home() {
           >
             <div className="max-w-4xl pb-2">
               <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[#dec768]">
-                reformer • mindful movement • personal sessions
+                первая студия в обнинске с профессиональным оборудованием для
+                группового пилатеса
               </p>
               <h1 className="mt-5 max-w-4xl font-heading text-balance text-6xl leading-[0.9] sm:text-7xl lg:text-8xl">
-                Плавная сила, собранная вокруг тела, а не против него.
+                Флоу Пилатес
               </h1>
-              <p className="mt-6 max-w-2xl text-base leading-7 text-white/78 sm:text-lg">
-                Flow Pilates делает движение красивым изнутри: через спокойный
-                темп, точную технику, реформер, мат-практику и внимательную
-                работу с тем, что телу действительно нужно именно сейчас.
+              <p className="mt-5 max-w-2xl font-heading text-2xl leading-tight text-[#f1ede4] sm:text-3xl">
+                Добро пожаловать в мир гармонии и здоровья
+              </p>
+              <p className="mt-6 max-w-3xl text-base leading-7 text-white/78 sm:text-lg">
+                &quot;Главная ценность в жизни - это здоровье&quot;. Наш метод -
+                это диалог разума и тела, выстроенный индивидуально для вас.
+                Бережное, осознанное движение, которое будет с вами всю жизнь.
+              </p>
+              <p className="mt-4 max-w-3xl text-sm leading-7 text-white/68 sm:text-base">
+                Мы создали пространство, где разум и тело обретают гармонию
+                через индивидуальный подход, бережное и осознанное движение,
+                доступное в любом возрасте.
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a
-                  href={bookingLink}
-                  target="_blank"
-                  rel="noreferrer"
+                  href="#formats"
                   className={cn(
                     buttonVariants({ size: "lg" }),
                     "h-12 rounded-md border border-[#d7ecbd] bg-[#d7ecbd] px-5 text-sm text-[#173127] hover:bg-[#ecf8e1]",
                   )}
                 >
-                  Открыть запись
+                  Поймать баланс
                 </a>
                 <a
-                  href={videoLink}
+                  href={bookingLink}
                   target="_blank"
                   rel="noreferrer"
                   className={cn(
@@ -356,8 +341,7 @@ export default function Home() {
                     "h-12 rounded-md border-white/20 bg-white/8 px-5 text-sm text-white hover:bg-white/12 hover:text-white",
                   )}
                 >
-                  <PlayCircle className="size-4" />
-                  Ощутить атмосферу
+                  Открыть запись
                 </a>
               </div>
 
@@ -390,8 +374,8 @@ export default function Home() {
                       Екатерина Хромченкова
                     </p>
                     <p className="mt-2 text-sm leading-6 text-white/72">
-                      Основатель студии и тренер, который собирает практику
-                      вокруг человека, а не наоборот.
+                      Основатель студии и тренер, который выстраивает практику
+                      вокруг человека и его состояния.
                     </p>
                   </div>
                 </div>
@@ -406,19 +390,27 @@ export default function Home() {
                     </p>
                     <p className="mt-3 text-sm leading-6 text-white/68">
                       Индивидуальный подход, бережное движение и устойчивый
-                      результат, с которым хочется жить каждый день.
+                      результат без спешки и перегруза.
                     </p>
                   </div>
 
-                  <div className="relative aspect-[0.88] overflow-hidden rounded-lg border border-white/12">
-                    <Image
-                      src="https://static.tildacdn.com/tild3564-3662-4361-a538-316531356135/IMG_0330.jpeg"
-                      alt="Интерьер Flow Pilates"
-                      fill
-                      sizes="(max-width: 1024px) 100vw, 190px"
-                      className="object-cover"
-                    />
-                  </div>
+                  <a
+                    href={heroVideoLink}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group block rounded-lg border border-white/12 bg-black/15 p-4 transition-colors hover:border-[#d7ecbd]/60"
+                  >
+                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#d7ecbd]">
+                      Видео студии
+                    </p>
+                    <p className="mt-3 text-sm leading-6 text-white/70">
+                      Фон в hero взят из ролика студии. Открыть полное видео.
+                    </p>
+                    <span className="mt-4 inline-flex items-center gap-2 text-sm text-white transition-colors group-hover:text-[#d7ecbd]">
+                      Смотреть во VK Video
+                      <ArrowUpRight className="size-4" />
+                    </span>
+                  </a>
                 </div>
               </div>
 
@@ -437,34 +429,23 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="overflow-hidden border-y border-[#c5d0c0] bg-[#dfe8d9] text-[#173127]">
-        <div className="marquee-track flex w-max items-center gap-4 py-4">
-          {[...marqueeWords, ...marqueeWords].map((word, index) => (
-            <div
-              key={`${word}-${index}`}
-              className="flex items-center gap-4 px-1 text-sm uppercase tracking-[0.32em]"
-            >
-              <span>{word}</span>
-              <span className="size-1.5 rounded-full bg-[#d26b51]" />
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section id="studio" className="bg-[#eef2eb]">
+      <section
+        id="studio"
+        className="scroll-mt-24 bg-[#eef2eb] text-[#173127]"
+      >
         <div className="section-shell grid gap-12 py-18 lg:grid-cols-[17rem_minmax(0,1fr)] lg:gap-16">
           <aside className="lg:sticky lg:top-8 lg:self-start">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#d26b51]">
               Студия
             </p>
             <h2 className="mt-4 font-heading text-4xl leading-[0.94] text-[#173127]">
-              Пилатес как внимательная архитектура движения.
+              Пилатес как бережная и осознанная система движения.
             </h2>
 
             <ul className="mt-8 space-y-4 border-t border-[#c5d0c0] pt-5 text-sm leading-6 text-[#4b544a]">
               {founderFacts.map((fact) => (
                 <li key={fact} className="flex gap-3">
-                  <span className="mt-2 size-1.5 shrink-0 rounded-full bg-[#d26b51]" />
+                  <Check className="mt-1 size-4 shrink-0 text-[#d26b51]" />
                   <span>{fact}</span>
                 </li>
               ))}
@@ -503,14 +484,16 @@ export default function Home() {
                   Манифест Flow Pilates
                 </p>
                 <p className="mt-5 max-w-4xl font-heading text-balance text-5xl leading-[0.95] text-[#173127] sm:text-6xl">
-                  Разум и тело встречаются в одном спокойном ритме, где сила
-                  приходит через ясность, а не через спешку.
+                  &quot;Главная ценность в жизни - это здоровье&quot;. Наш
+                  метод - это диалог разума и тела, выстроенный индивидуально
+                  для вас.
                 </p>
               </div>
               <div className="border-l border-[#c5d0c0] pl-4 text-sm leading-6 text-[#4d564b]">
-                Мы создали пространство, в котором движение становится не
-                обязанностью, а мягкой точкой опоры. Здесь можно начать с нуля,
-                вернуться после паузы или углубить уже знакомую практику.
+                Бережное, осознанное движение, которое будет с вами всю жизнь.
+                Мы создали пространство, где разум и тело обретают гармонию
+                через индивидуальный подход, бережное и осознанное движение,
+                доступное в любом возрасте.
               </div>
             </div>
 
@@ -529,8 +512,8 @@ export default function Home() {
                     Пространство
                   </p>
                   <p className="mt-2 max-w-md text-sm leading-6 text-white/74">
-                    Теплый минимализм, точное оборудование и ритм, который дает
-                    телу возможность не бороться, а раскрываться.
+                    Теплый минимализм, профессиональное оборудование и спокойный
+                    ритм практики.
                   </p>
                 </div>
               </div>
@@ -550,88 +533,31 @@ export default function Home() {
                     Основа метода
                   </p>
                   <p className="mt-3 text-sm leading-6 text-[#4d564b]">
-                    Бережное, осознанное движение, которое остается с человеком
-                    надолго и поддерживает качество повседневной жизни.
+                    Индивидуальный подход, бережное движение и практика, к
+                    которой хочется возвращаться надолго.
                   </p>
                 </div>
               </div>
-            </div>
-
-            <div className="grid gap-5 md:grid-cols-3">
-              {pillars.map((pillar) => {
-                const Icon = pillar.icon;
-
-                return (
-                  <div
-                    key={pillar.title}
-                    className="border-t border-[#c5d0c0] pt-5 text-[#173127]"
-                  >
-                    <Icon className="size-5 text-[#d26b51]" />
-                    <h3 className="mt-4 font-heading text-3xl leading-none">
-                      {pillar.title}
-                    </h3>
-                    <p className="mt-3 max-w-sm text-sm leading-6 text-[#526052]">
-                      {pillar.text}
-                    </p>
-                  </div>
-                );
-              })}
             </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-[#173127] text-[#f6f3ec]">
-        <div className="section-shell grid gap-10 py-18 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-14">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#dec768]">
-              Как строится практика
-            </p>
-            <h2 className="mt-4 max-w-xl font-heading text-balance text-5xl leading-[0.95]">
-              Не жесткая дисциплина, а точный и спокойный прогресс.
-            </h2>
-            <p className="mt-5 max-w-lg text-base leading-7 text-white/72">
-              Flow Pilates не разгоняет тело через перегруз. Вместо этого
-              практика выстраивает новый способ двигаться, дышать и держать
-              опору в повседневности.
-            </p>
-          </div>
-
-          <div className="space-y-6">
-            {stages.map((stage) => (
-              <div
-                key={stage.index}
-                className="grid gap-4 border-t border-white/14 py-5 md:grid-cols-[5.5rem_minmax(0,1fr)]"
-              >
-                <div className="font-heading text-5xl leading-none text-[#dec768]">
-                  {stage.index}
-                </div>
-                <div>
-                  <h3 className="font-heading text-3xl leading-none">
-                    {stage.title}
-                  </h3>
-                  <p className="mt-3 max-w-xl text-sm leading-6 text-white/72">
-                    {stage.text}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="programs" className="bg-[#eef2eb]">
+      <section
+        id="formats"
+        className="scroll-mt-24 bg-[#eef2eb]"
+      >
         <div className="section-shell py-18">
           <div className="max-w-3xl">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#d26b51]">
               Форматы
             </p>
             <h2 className="mt-4 font-heading text-balance text-5xl leading-[0.95] text-[#173127]">
-              Программы не спорят друг с другом, а собираются в одну систему.
+              Направления студии, которые помогают выстроить свой ритм практики.
             </h2>
             <p className="mt-5 text-base leading-7 text-[#556154]">
               Можно начать с того формата, который телу ближе сейчас, и дальше
-              углублять практику в своем ритме.
+              углублять практику в своем темпе.
             </p>
           </div>
 
@@ -646,6 +572,15 @@ export default function Home() {
               <p className="mt-5 max-w-2xl text-base leading-7 text-white/74">
                 {featuredProgram.description}
               </p>
+
+              <ul className="mt-6 space-y-3 text-sm leading-7 text-white/70">
+                {featuredProgram.points.map((point) => (
+                  <li key={point} className="flex gap-3">
+                    <span className="mt-3 size-1.5 shrink-0 rounded-full bg-[#dec768]" />
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
 
               <div className="mt-6 flex flex-wrap gap-3 text-xs uppercase tracking-[0.2em] text-white/58">
                 <span>{featuredProgram.note}</span>
@@ -664,7 +599,7 @@ export default function Home() {
                   Записаться на реформер
                 </a>
                 <a
-                  href={videoLink}
+                  href={heroVideoLink}
                   target="_blank"
                   rel="noreferrer"
                   className={cn(
@@ -705,6 +640,9 @@ export default function Home() {
                   <p className="mt-3 max-w-2xl text-sm leading-6 text-[#556154]">
                     {program.description}
                   </p>
+                  <p className="mt-3 max-w-2xl text-sm leading-6 text-[#556154]">
+                    {program.detail}
+                  </p>
                   <a
                     href={program.href}
                     target="_blank"
@@ -731,18 +669,21 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="pricing" className="bg-[#111512] text-[#f6f3ec]">
+      <section
+        id="pricing"
+        className="scroll-mt-24 bg-[#111512] text-[#f6f3ec]"
+      >
         <div className="section-shell grid gap-10 py-18 lg:grid-cols-[19rem_minmax(0,1fr)] lg:gap-14">
           <aside className="lg:sticky lg:top-8 lg:self-start">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#dec768]">
-              Стоимость
+              Тарифы
             </p>
             <h2 className="mt-4 font-heading text-5xl leading-[0.95]">
-              Прозрачные цены, чтобы выбрать свой темп без лишних раздумий.
+              Стоимость занятий по действующему сайту студии.
             </h2>
             <p className="mt-5 text-base leading-7 text-white/66">
-              Основа собрана по текущему сайту студии. Для персональных и
-              сплит-занятий удобнее всего сразу писать администратору.
+              Для персональных и сплит-занятий удобнее всего сразу писать
+              администратору.
             </p>
 
             <a
@@ -815,9 +756,34 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="bg-[#b5d5a1] text-[#111111]">
+        <div className="section-shell flex flex-col gap-5 py-12 lg:flex-row lg:items-center lg:justify-between">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-black/56">
+              Условия посещения студии
+            </p>
+            <h2 className="mt-3 font-heading text-4xl leading-[0.94]">
+              Все важное можно прочитать заранее и спокойно выбрать удобный
+              формат.
+            </h2>
+          </div>
+          <a
+            href={termsLink}
+            target="_blank"
+            rel="noreferrer"
+            className={cn(
+              buttonVariants({ size: "lg" }),
+              "h-11 rounded-md border border-[#111111] bg-[#111111] px-5 text-sm text-[#f7f4ee] hover:bg-[#1d1d1d]",
+            )}
+          >
+            Читать подробнее
+          </a>
+        </div>
+      </section>
+
       <section
         id="contacts"
-        className="relative isolate overflow-hidden bg-[#132018] text-[#f6f3ec]"
+        className="relative isolate scroll-mt-24 overflow-hidden bg-[#132018] text-[#f6f3ec]"
       >
         <div className="absolute inset-0">
           <Image
@@ -837,13 +803,11 @@ export default function Home() {
                 Контакты
               </p>
               <h2 className="mt-4 max-w-3xl font-heading text-balance text-5xl leading-[0.95]">
-                Иногда все, что нужно телу, это одно внимательное первое
-                занятие.
+                Дышите полной грудью и приходите знакомиться со студией.
               </h2>
               <p className="mt-5 max-w-2xl text-base leading-7 text-white/72">
                 Записывайтесь онлайн, задавайте вопросы в мессенджерах и
-                приходите знакомиться со студией в Обнинске. Первый шаг здесь
-                ощущается спокойно уже с порога.
+                приходите в студию в Обнинске. Ждем вас.
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -902,21 +866,11 @@ export default function Home() {
             <div className="space-y-6">
               <div className="border-t border-white/12 pt-5">
                 <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#dec768]">
-                  Кому подходит Flow Pilates
-                </p>
-                <p className="mt-4 text-sm leading-7 text-white/74">
-                  Тем, кто хочет добавить телу мягкую силу, выровнять осанку,
-                  почувствовать центр и вернуть движению спокойную точность.
-                </p>
-              </div>
-
-              <div className="border-t border-white/12 pt-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#dec768]">
                   Что есть в студии
                 </p>
                 <p className="mt-4 text-sm leading-7 text-white/74">
                   Реформер, пилатес с малым оборудованием, персональная работа,
-                  сплит-тренировки и отдельные программы для подростков 12–16.
+                  сплит-тренировки и отдельные программы для подростков 12-16.
                 </p>
               </div>
 
