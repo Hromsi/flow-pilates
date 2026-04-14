@@ -285,7 +285,7 @@ export default function Home() {
               rel="noreferrer"
               className={cn(
                 buttonVariants({ size: "lg" }),
-                "hover-lift-soft h-11 rounded-md border border-[#d7ecbd] bg-[#d7ecbd] px-4 text-sm text-[#173127] hover:bg-[#ecf8e1]",
+                "hover-lift-soft h-11 rounded-md border border-[#d7ecbd] bg-[#d7ecbd] px-4 text-sm text-[#173127] hover:bg-[#ecf8e1] hover:text-[#173127] focus-visible:text-[#173127]",
               )}
             >
               Записаться
@@ -341,7 +341,7 @@ export default function Home() {
                   href="#formats"
                   className={cn(
                     buttonVariants({ size: "lg" }),
-                    "hover-lift h-12 rounded-md border border-[#d7ecbd] bg-[#d7ecbd] px-5 text-sm text-[#173127] hover:bg-[#ecf8e1] hover:shadow-[0_18px_40px_rgba(215,236,189,0.18)]",
+                    "hover-lift h-12 rounded-md border border-[#d7ecbd] bg-[#d7ecbd] px-5 text-sm text-[#173127] hover:bg-[#ecf8e1] hover:text-[#173127] focus-visible:text-[#173127] hover:shadow-[0_18px_40px_rgba(215,236,189,0.18)]",
                   )}
                 >
                   Поймать баланс
@@ -617,7 +617,7 @@ export default function Home() {
                   rel="noreferrer"
                   className={cn(
                     buttonVariants({ size: "lg" }),
-                    "h-11 rounded-md border border-[#d7ecbd] bg-[#d7ecbd] px-5 text-sm text-[#173127] hover:bg-[#ecf8e1]",
+                    "h-11 rounded-md border border-[#d7ecbd] bg-[#d7ecbd] px-5 text-sm text-[#173127] hover:bg-[#ecf8e1] hover:text-[#173127] focus-visible:text-[#173127]",
                   )}
                 >
                   Записаться на реформер
@@ -722,7 +722,7 @@ export default function Home() {
               rel="noreferrer"
               className={cn(
                 buttonVariants({ size: "lg" }),
-                "hover-lift mt-8 h-11 rounded-md border border-[#d7ecbd] bg-[#d7ecbd] px-5 text-sm text-[#173127] hover:bg-[#ecf8e1]",
+                "hover-lift mt-8 h-11 rounded-md border border-[#d7ecbd] bg-[#d7ecbd] px-5 text-sm text-[#173127] hover:bg-[#ecf8e1] hover:text-[#173127] focus-visible:text-[#173127]",
               )}
             >
               Уточнить подходящий абонемент
@@ -852,7 +852,7 @@ export default function Home() {
                   rel="noreferrer"
                   className={cn(
                     buttonVariants({ size: "lg" }),
-                    "hover-lift h-12 rounded-md border border-[#d7ecbd] bg-[#d7ecbd] px-5 text-sm text-[#173127] hover:bg-[#ecf8e1]",
+                    "hover-lift h-12 rounded-md border border-[#d7ecbd] bg-[#d7ecbd] px-5 text-sm text-[#173127] hover:bg-[#ecf8e1] hover:text-[#173127] focus-visible:text-[#173127]",
                   )}
                 >
                   Записаться в YCLIENTS
