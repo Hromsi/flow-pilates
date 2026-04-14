@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 
 import { HeroVideoBackground } from "@/components/hero-video-background";
+import { MobileNav } from "@/components/mobile-nav";
 import { Reveal } from "@/components/reveal";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -247,10 +248,20 @@ export default function Home() {
               <span>Студия здорового тела</span>
             </div>
             <div className="flex items-center gap-4 sm:gap-6">
-              <a href={telegramLink} target="_blank" rel="noreferrer">
+              <a
+                href={telegramLink}
+                target="_blank"
+                rel="noreferrer"
+                className="transition-colors hover:text-[#d7ecbd]"
+              >
                 Telegram
               </a>
-              <a href={whatsappLink} target="_blank" rel="noreferrer">
+              <a
+                href={whatsappLink}
+                target="_blank"
+                rel="noreferrer"
+                className="transition-colors hover:text-[#d7ecbd]"
+              >
                 WhatsApp
               </a>
             </div>
@@ -285,11 +296,19 @@ export default function Home() {
               rel="noreferrer"
               className={cn(
                 buttonVariants({ size: "lg" }),
-                "hover-lift-soft h-11 rounded-md border border-[#d7ecbd] bg-[#d7ecbd] px-4 text-sm text-[#173127] hover:bg-[#ecf8e1] hover:text-[#173127] focus-visible:text-[#173127]",
+                "hover-lift-soft hidden h-11 rounded-md border border-[#d7ecbd] bg-[#d7ecbd] px-4 text-sm text-[#173127] hover:bg-[#ecf8e1] hover:text-[#173127] focus-visible:text-[#173127] md:inline-flex",
               )}
             >
               Записаться
             </a>
+
+            <MobileNav
+              navigation={navigation}
+              bookingLink={bookingLink}
+              whatsappLink={whatsappLink}
+              telegramLink={telegramLink}
+              phoneLink={phoneLink}
+            />
           </nav>
 
           <div
