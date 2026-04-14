@@ -14,8 +14,8 @@ import {
 } from "lucide-react";
 
 import { HeroVideoBackground } from "@/components/hero-video-background";
-import { MobileNav } from "@/components/mobile-nav";
 import { Reveal } from "@/components/reveal";
+import { SiteHeader } from "@/components/site-header";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -227,6 +227,14 @@ const contacts = [
 export default function Home() {
   return (
     <main className="flex-1">
+      <SiteHeader
+        navigation={navigation}
+        bookingLink={bookingLink}
+        whatsappLink={whatsappLink}
+        telegramLink={telegramLink}
+        phoneLink={phoneLink}
+      />
+
       <section className="relative isolate overflow-hidden bg-[#0f1410] text-[#f6f3ec]">
         <div className="absolute inset-0">
           <HeroVideoBackground
@@ -238,79 +246,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,12,11,0.24)_0%,rgba(10,12,11,0.4)_48%,rgba(10,12,11,0.88)_100%)]" />
         </div>
 
-        <div className="section-shell relative flex min-h-[86svh] flex-col pb-8 pt-4 sm:min-h-[88svh] lg:min-h-[90svh]">
-          <div
-            className="hero-rise flex flex-wrap items-center justify-between gap-4 border-b border-white/10 py-3 text-[11px] uppercase tracking-[0.28em] text-white/68"
-            style={{ "--hero-delay": "60ms" } as CSSProperties}
-          >
-            <div className="flex flex-wrap items-center gap-4 sm:gap-6">
-              <span>Обнинск</span>
-              <span>Студия здорового тела</span>
-            </div>
-            <div className="flex items-center gap-4 sm:gap-6">
-              <a
-                href={telegramLink}
-                target="_blank"
-                rel="noreferrer"
-                className="transition-colors hover:text-[#d7ecbd]"
-              >
-                Telegram
-              </a>
-              <a
-                href={whatsappLink}
-                target="_blank"
-                rel="noreferrer"
-                className="transition-colors hover:text-[#d7ecbd]"
-              >
-                WhatsApp
-              </a>
-            </div>
-          </div>
-
-          <nav
-            className="hero-rise flex items-center justify-between gap-4 py-5"
-            style={{ "--hero-delay": "120ms" } as CSSProperties}
-          >
-            <a
-              href="#top"
-              className="font-heading text-base uppercase tracking-[0.34em] text-[#d7ecbd]"
-            >
-              Flow Pilates
-            </a>
-
-            <div className="hidden items-center gap-7 md:flex">
-              {navigation.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  className="text-sm text-white/78 transition-colors hover:text-[#e6f5d4]"
-                >
-                  {item.label}
-                </a>
-              ))}
-            </div>
-
-            <a
-              href={bookingLink}
-              target="_blank"
-              rel="noreferrer"
-              className={cn(
-                buttonVariants({ size: "lg" }),
-                "hover-lift-soft hidden h-11 rounded-md border border-[#d7ecbd] bg-[#d7ecbd] px-4 text-sm text-[#173127] hover:bg-[#ecf8e1] hover:text-[#173127] focus-visible:text-[#173127] md:inline-flex",
-              )}
-            >
-              Записаться
-            </a>
-
-            <MobileNav
-              navigation={navigation}
-              bookingLink={bookingLink}
-              whatsappLink={whatsappLink}
-              telegramLink={telegramLink}
-              phoneLink={phoneLink}
-            />
-          </nav>
-
+        <div className="section-shell relative flex min-h-[100svh] flex-col pb-8 pt-[7.75rem] sm:pt-[8rem] md:pt-[8.25rem]">
           <div
             id="top"
             className="grid flex-1 items-end gap-12 py-8 lg:grid-cols-[minmax(0,1fr)_30rem] lg:items-center lg:gap-14 lg:py-8 xl:py-10"
@@ -468,7 +404,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="studio" className="scroll-mt-24 bg-[#eef2eb] text-[#173127]">
+      <section
+        id="studio"
+        className="scroll-mt-[7.5rem] bg-[#eef2eb] text-[#173127] md:scroll-mt-[8.25rem]"
+      >
         <div className="section-shell grid gap-12 py-18 lg:grid-cols-[17rem_minmax(0,1fr)] lg:gap-16">
           <Reveal className="lg:sticky lg:top-8 lg:self-start" direction="right" blur>
             <aside>
@@ -587,7 +526,7 @@ export default function Home() {
 
       <section
         id="formats"
-        className="scroll-mt-24 bg-[#eef2eb]"
+        className="scroll-mt-[7.5rem] bg-[#eef2eb] md:scroll-mt-[8.25rem]"
       >
         <div className="section-shell py-18">
           <div className="max-w-3xl">
@@ -720,7 +659,7 @@ export default function Home() {
 
       <section
         id="pricing"
-        className="scroll-mt-24 bg-[#111512] text-[#f6f3ec]"
+        className="scroll-mt-[7.5rem] bg-[#111512] text-[#f6f3ec] md:scroll-mt-[8.25rem]"
       >
         <div className="section-shell grid gap-10 py-18 lg:grid-cols-[19rem_minmax(0,1fr)] lg:gap-14">
           <aside className="lg:sticky lg:top-8 lg:self-start">
@@ -837,7 +776,7 @@ export default function Home() {
 
       <section
         id="contacts"
-        className="relative isolate scroll-mt-24 overflow-hidden bg-[#132018] text-[#f6f3ec]"
+        className="relative isolate scroll-mt-[7.5rem] overflow-hidden bg-[#132018] text-[#f6f3ec] md:scroll-mt-[8.25rem]"
       >
         <div className="absolute inset-0">
           <Image
