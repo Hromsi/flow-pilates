@@ -32,6 +32,9 @@ const termsLink = "http://flowpilates.ru/page77944686.html";
 const heroVideoLink =
   "https://vkvideo.ru/video72587992_456239758?list=ln-2KATAulJ47pVPb6xNW";
 const heroVideoBackgroundUrl = "/api/hero-video";
+const heroPosterImage = "/images/flow-pilates/hero-poster.jpg";
+const founderImage = "/images/flow-pilates/founder.png";
+const practiceSessionImage = "/images/flow-pilates/practice-session.jpg";
 
 const navigation = [
   { label: "Студия", href: "#studio" },
@@ -72,8 +75,7 @@ const featuredProgram = {
     "Стретчинг + Реформер объединяет упражнения на гибкость с использованием реформера и техники самомассажа (МФР).",
   ],
   note: "55 минут • любой уровень",
-  image:
-    "https://static.tildacdn.com/tild3035-6637-4336-a236-666633656665/84748.png",
+  image: "/images/flow-pilates/reformer-program.png",
 };
 
 const programs = [
@@ -84,8 +86,7 @@ const programs = [
       "Система упражнений, выполняемых на коврике. Направлена на проработку глубоких мышц живота и спины, улучшение осанки и снижение риска травм.",
     detail:
       "На тренировке используется малое оборудование пилатеса: изотоническое кольцо, ролл, лента и мяч.",
-    image:
-      "https://static.tildacdn.com/tild6331-3236-4335-b564-343434383532/2320672.png",
+    image: "/images/flow-pilates/mat-program.png",
     action: "Выбрать время",
     href: bookingLink,
   },
@@ -96,8 +97,7 @@ const programs = [
       "Тренировка один на один с тренером, полностью сфокусированная на ваши цели и задачи.",
     detail:
       "Программа выстраивается с учетом текущего уровня подготовки, особенностей здоровья и пожеланий.",
-    image:
-      "https://static.tildacdn.com/tild6231-3637-4266-a461-373030656439/a9747d5b776b1bf5e1e4.png",
+    image: "/images/flow-pilates/personal-training.png",
     action: "Написать администратору",
     href: whatsappLink,
   },
@@ -108,8 +108,7 @@ const programs = [
       "Индивидуальная программа, разработанная для занятий в паре, с профессиональным контролем и поддержкой тренера.",
     detail:
       "Формат учитывает уровень подготовки, особенности здоровья и пожелания обоих участников.",
-    image:
-      "https://static.tildacdn.com/tild6335-3433-4236-b363-366232396562/2963527.png",
+    image: "/images/flow-pilates/split-training.png",
     action: "Обсудить формат",
     href: whatsappLink,
   },
@@ -120,8 +119,7 @@ const programs = [
       "Занятия направлены на укрепление опорно-двигательного аппарата и развитие физических качеств.",
     detail:
       "Первая часть тренировки проходит на коврике, вторая - на реформере. Формат помогает снизить уровень стресса и привить любовь к физической активности.",
-    image:
-      "https://static.tildacdn.com/tild3663-3736-4138-a537-646361343264/9208888.png",
+    image: "/images/flow-pilates/teens-training.png",
     action: "Записать подростка",
     href: bookingLink,
   },
@@ -238,7 +236,7 @@ export default function Home() {
       <section className="relative isolate overflow-hidden bg-[#0f1410] text-[#f6f3ec]">
         <div className="absolute inset-0">
           <HeroVideoBackground
-            posterSrc="https://static.tildacdn.com/tild6437-3630-4863-b565-343366313536/40573.jpg"
+            posterSrc={heroPosterImage}
             posterAlt="Пространство студии Flow Pilates"
             videoSrc={heroVideoBackgroundUrl}
           />
@@ -338,7 +336,7 @@ export default function Home() {
               <div className="grid items-end gap-4 sm:grid-cols-[minmax(0,1fr)_190px]">
                 <div className="hover-lift relative aspect-[0.88] overflow-hidden rounded-lg border border-white/12 bg-black/15 shadow-[0_18px_40px_rgba(0,0,0,0.2)]">
                   <Image
-                    src="https://static.tildacdn.com/tild6131-6165-4130-b632-623633653561/Photoroom_20250717_1.png"
+                    src={founderImage}
                     alt="Основатель студии Flow Pilates"
                     fill
                     sizes="(max-width: 1024px) 100vw, 24rem"
@@ -481,7 +479,7 @@ export default function Home() {
             <div className="grid gap-5 md:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]">
               <div className="hover-lift relative aspect-[1.3] overflow-hidden rounded-lg">
                 <Image
-                  src="https://static.tildacdn.com/tild6437-3630-4863-b565-343366313536/40573.jpg"
+                  src={heroPosterImage}
                   alt="Зал студии Flow Pilates"
                   fill
                   sizes="(max-width: 768px) 100vw, 60vw"
@@ -502,7 +500,7 @@ export default function Home() {
               <div className="grid gap-5 sm:grid-cols-2 md:grid-cols-1">
                 <div className="hover-lift-soft relative aspect-[1/1.08] overflow-hidden rounded-lg bg-[#dbe4d7]">
                   <Image
-                    src="https://static.tildacdn.com/tild3734-3562-4465-a632-386164333664/82041.jpg"
+                    src={practiceSessionImage}
                     alt="Практика в студии"
                     fill
                     sizes="(max-width: 768px) 100vw, 30vw"
@@ -780,7 +778,7 @@ export default function Home() {
       >
         <div className="absolute inset-0">
           <Image
-            src="https://static.tildacdn.com/tild3734-3562-4465-a632-386164333664/82041.jpg"
+            src={practiceSessionImage}
             alt="Студия Flow Pilates"
             fill
             sizes="100vw"
