@@ -89,7 +89,7 @@ export function SiteHeader({
         <nav className="flex h-14 items-center justify-between gap-4 border-b border-white/10">
           <a
             href="#top"
-            className="font-heading text-base uppercase tracking-[0.34em] text-[#d7ecbd]"
+            className="font-heading text-base uppercase tracking-[0.34em] text-[#d7ecbd] transition-colors hover:text-[#ecf8e1]"
           >
             Flow Pilates
           </a>

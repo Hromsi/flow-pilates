@@ -33,7 +33,6 @@ const heroVideoLink =
   "https://vkvideo.ru/video72587992_456239758?list=ln-2KATAulJ47pVPb6xNW";
 const heroVideoBackgroundUrl = "/api/hero-video";
 const heroPosterImage = "/images/flow-pilates/hero-poster.jpg";
-const founderImage = "/images/flow-pilates/founder.png";
 const practiceSessionImage = "/images/flow-pilates/practice-session.jpg";
 
 const navigation = [
@@ -334,15 +333,18 @@ export default function Home() {
               style={{ "--hero-delay": "300ms" } as CSSProperties}
             >
               <div className="grid items-end gap-4 sm:grid-cols-[minmax(0,1fr)_190px]">
-                <div className="hover-lift relative aspect-[0.88] overflow-hidden rounded-lg border border-white/12 bg-black/15 shadow-[0_18px_40px_rgba(0,0,0,0.2)]">
-                  <Image
-                    src={founderImage}
-                    alt="Основатель студии Flow Pilates"
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 24rem"
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-x-0 bottom-0 bg-[linear-gradient(180deg,transparent,rgba(10,12,11,0.92))] px-5 pb-5 pt-14">
+                <div className="hover-lift overflow-hidden rounded-lg border border-white/12 bg-black/15 shadow-[0_18px_40px_rgba(0,0,0,0.2)] backdrop-blur-sm">
+                  <div className="relative aspect-[1.28] overflow-hidden border-b border-white/10 bg-[linear-gradient(180deg,rgba(215,236,189,0.12),rgba(10,12,11,0.16))]">
+                    <Image
+                      src={practiceSessionImage}
+                      alt="Основатель студии Flow Pilates"
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 24rem"
+                      className="object-cover object-top"
+                    />
+                  </div>
+
+                  <div className="px-5 pb-5 pt-4">
                     <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#dec768]">
                       Екатерина Хромченкова
                     </p>
