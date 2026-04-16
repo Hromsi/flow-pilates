@@ -1,6 +1,7 @@
 import type { CSSProperties } from "react";
 
 import Image from "next/image";
+import Link from "next/link";
 import {
   ArrowUpRight,
   Check,
@@ -19,18 +20,17 @@ import { SiteHeader } from "@/components/site-header";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-const bookingLink =
-  "https://n1730823.yclients.com/company/1543386/about?o=m4492392&previousStepUrl=%2Fcompany%2F1543386%2Frecord-type%3Fo%3Dm4492392";
-const whatsappLink =
-  "https://api.whatsapp.com/send/?phone=79857148630&text=Здравствуйте%21+Хочу+записаться&type=phone_number&app_absent=0";
-const telegramLink = "https://t.me/+fQooG2dMMcc4NmRi";
-const phoneLink = "tel:+79857148630";
-const mailLink = "mailto:Keit-Obninsk@yandex.ru";
-const mapsLink =
-  "https://yandex.ru/maps/?text=Обнинск%2C%20пр-т%20Ленина%20137%20корп.%204%20пом.%20254";
-const termsLink = "http://flowpilates.ru/page77944686.html";
-const heroVideoLink =
-  "https://vkvideo.ru/video72587992_456239758?list=ln-2KATAulJ47pVPb6xNW";
+import {
+  bookingLink,
+  heroVideoLink,
+  mailLink,
+  mapsLink,
+  phoneLink,
+  telegramLink,
+  termsLink,
+  whatsappLink,
+} from "@/lib/links";
+
 const heroVideoBackgroundUrl = "/api/hero-video";
 const heroPosterImage = "/images/flow-pilates/hero-poster.jpg";
 const practiceSessionImage = "/images/flow-pilates/practice-session.jpg";
@@ -934,17 +934,15 @@ export default function Home() {
               формат.
             </h2>
           </div>
-          <a
+          <Link
             href={termsLink}
-            target="_blank"
-            rel="noreferrer"
             className={cn(
               buttonVariants({ size: "lg" }),
               "hover-lift-soft h-11 rounded-md border border-[#111111] bg-[#111111] px-5 text-sm text-[#f7f4ee] hover:bg-[#1d1d1d]",
             )}
           >
             Читать подробнее
-          </a>
+          </Link>
         </div>
       </section>
 

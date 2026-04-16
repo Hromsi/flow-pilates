@@ -17,6 +17,7 @@ type SiteHeaderProps = {
   phoneLink: string;
   telegramLink: string;
   whatsappLink: string;
+  alwaysDark?: boolean;
 };
 
 export function SiteHeader({
@@ -25,10 +26,16 @@ export function SiteHeader({
   phoneLink,
   telegramLink,
   whatsappLink,
+  alwaysDark = false,
 }: SiteHeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
+    if (alwaysDark) {
+      setIsScrolled(true);
+      return;
+    }
+
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
@@ -39,14 +46,14 @@ export function SiteHeader({
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [alwaysDark]);
 
   return (
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-[180] text-[#f6f3ec] transition-[background-color,backdrop-filter,box-shadow,border-color] duration-300",
         isScrolled
-          ? "bg-[rgba(10,12,11,0.58)] backdrop-blur-md shadow-[0_18px_44px_rgba(0,0,0,0.18)]"
+          ? "bg-[rgba(10,12,11,0.82)] backdrop-blur-md shadow-[0_18px_44px_rgba(0,0,0,0.18)]"
           : "bg-transparent",
       )}
     >
