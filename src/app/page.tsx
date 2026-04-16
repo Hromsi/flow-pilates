@@ -34,10 +34,12 @@ const heroVideoLink =
 const heroVideoBackgroundUrl = "/api/hero-video";
 const heroPosterImage = "/images/flow-pilates/hero-poster.jpg";
 const practiceSessionImage = "/images/flow-pilates/practice-session.jpg";
+const methodFoundationImage = "/images/flow-pilates/method-foundation.jpg";
 
 const navigation = [
   { label: "Студия", href: "#studio" },
   { label: "Форматы", href: "#formats" },
+  { label: "Тренеры", href: "#trainers" },
   { label: "Тарифы", href: "#pricing" },
   { label: "Контакты", href: "#contacts" },
 ];
@@ -121,6 +123,54 @@ const programs = [
     image: "/images/flow-pilates/teens-training.png",
     action: "Записать подростка",
     href: bookingLink,
+  },
+];
+
+const trainers = [
+  {
+    index: "01",
+    role: "Основатель и действующий тренер",
+    name: "Екатерина Хромченкова",
+    image: "/images/flow-pilates/ekaterina-khromchenkova.jpg",
+    bio: [
+      "Дипломированный специалист в области физической культуры, опыт в фитнесе — более 4 лет. Последние 2 года углублённо изучаю метод Пилатес и его возможности. Это стало моей страстью и делом жизни.",
+      "Сертифицированный тренер Pilates Balanced Body (USA) — международный стандарт, который лежит в основе наших тренировок.",
+    ],
+    quote:
+      "Моя миссия — помочь каждому добиться своих целей, улучшить качество жизни и полюбить своё тело.",
+    credentialsTitle: "Ключевые сертификаты",
+    credentials: [
+      "Тренер-универсал групповых программ (Высшая школа фитнеса и бодибилдинга)",
+      "Анатомия в фитнесе",
+      "Принципы Движения",
+      "Пилатес Mat 1, 2, 3 (Balanced Body)",
+      "Анатомия 3D (Balanced Body)",
+      "Скрининг тела, 24 ч (Школа Лели Савосиной «Move4S»)",
+      "Реформер 1 (Balanced Body)",
+      "Реформер 2 (Balanced Body)",
+      "Стол-Трапеция, Кадиллак (Balanced Body)",
+    ],
+    cta: { label: "Записаться к Екатерине", href: bookingLink },
+  },
+  {
+    index: "02",
+    role: "Тренер студии",
+    name: "Кристина Беспалова",
+    image: "/images/flow-pilates/kristina-bespalova.jpg",
+    bio: [
+      "Дипломированный педагог физической культуры (КГУ им. К.Э. Циолковского) с опытом работы в фитнесе около 2 лет. За плечами этого срока — фундаментальное обучение, которое позволяет работать с телом глубоко и безопасно.",
+      "Прошла внутреннее обучение студии по направлению «Реформер» и готова применять свои знания на практике.",
+    ],
+    quote:
+      "Работаю бережно и внимательно — чтобы каждое движение приносило пользу и удовольствие.",
+    credentialsTitle: "Профессиональный арсенал",
+    credentials: [
+      "Пилатес Mat 1 («РеалФит»)",
+      "Анатомия 3D и Принципы Движения (Balanced Body)",
+      "Коррекция осанки. Сколиозы («РеалФит»)",
+      "Реабилитация после травм плеча, локтя, шеи («РеалФит»)",
+    ],
+    cta: { label: "Записаться к Кристине", href: bookingLink },
   },
 ];
 
@@ -408,7 +458,7 @@ export default function Home() {
         id="studio"
         className="scroll-mt-[7.5rem] bg-[#eef2eb] text-[#173127] md:scroll-mt-[8.25rem]"
       >
-        <div className="section-shell grid gap-12 py-18 lg:grid-cols-[17rem_minmax(0,1fr)] lg:gap-16">
+        <div className="section-shell grid gap-12 pt-18 pb-10 lg:grid-cols-[17rem_minmax(0,1fr)] lg:gap-16">
           <Reveal className="lg:sticky lg:top-8 lg:self-start" direction="right" blur>
             <aside>
               <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#d26b51]">
@@ -499,21 +549,20 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="grid gap-5 sm:grid-cols-2 md:grid-cols-1">
-                <div className="hover-lift-soft relative aspect-[1/1.08] overflow-hidden rounded-lg bg-[#dbe4d7]">
-                  <Image
-                    src={practiceSessionImage}
-                    alt="Практика в студии"
-                    fill
-                    sizes="(max-width: 768px) 100vw, 30vw"
-                    className="object-cover"
-                  />
-                </div>
-                <div className="border-t border-[#c5d0c0] pt-4">
-                  <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#d26b51]">
+              <div className="hover-lift relative aspect-[1.3] overflow-hidden rounded-lg md:aspect-auto md:h-full">
+                <Image
+                  src={methodFoundationImage}
+                  alt="Основа метода Flow Pilates"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 30vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent,rgba(15,20,16,0.72))]" />
+                <div className="absolute bottom-0 left-0 px-5 pb-5 pt-12 text-white">
+                  <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#dec768]">
                     Основа метода
                   </p>
-                  <p className="mt-3 text-sm leading-6 text-[#4d564b]">
+                  <p className="mt-2 max-w-md text-sm leading-6 text-white/74">
                     Индивидуальный подход, бережное движение и практика, к
                     которой хочется возвращаться надолго.
                   </p>
@@ -528,7 +577,7 @@ export default function Home() {
         id="formats"
         className="scroll-mt-[7.5rem] bg-[#eef2eb] md:scroll-mt-[8.25rem]"
       >
-        <div className="section-shell py-18">
+        <div className="section-shell pt-10 pb-18">
           <div className="max-w-3xl">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#d26b51]">
               Форматы
@@ -653,6 +702,155 @@ export default function Home() {
                 </article>
               </Reveal>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="trainers"
+        className="relative scroll-mt-[7.5rem] overflow-hidden bg-[#eef2eb] text-[#173127] md:scroll-mt-[8.25rem]"
+      >
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(23,49,39,0.22),transparent)]"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -top-24 right-[-10%] hidden h-[28rem] w-[28rem] rounded-full bg-[radial-gradient(circle,rgba(222,199,104,0.22),transparent_60%)] blur-2xl lg:block"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute bottom-[-6rem] left-[-6rem] hidden h-[24rem] w-[24rem] rounded-full bg-[radial-gradient(circle,rgba(210,107,81,0.14),transparent_60%)] blur-2xl lg:block"
+        />
+
+        <div className="section-shell relative py-18">
+          <Reveal blur>
+            <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.55fr)] lg:items-end">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#d26b51]">
+                  Команда
+                </p>
+                <h2 className="mt-4 max-w-4xl font-heading text-balance text-5xl leading-[0.95] text-[#173127] sm:text-6xl">
+                  Тренеры, которые выстраивают практику вокруг вас.
+                </h2>
+              </div>
+              <p className="max-w-md text-base leading-7 text-[#556154] lg:border-l lg:border-[#c5d0c0] lg:pl-5">
+                Два профессиональных тренера с фундаментальным образованием и
+                сертификатами международных школ. Каждая тренировка — бережное,
+                осознанное движение под внимательным контролем.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="mt-14 space-y-20 lg:space-y-24">
+            {trainers.map((trainer, trainerIndex) => {
+              const isReversed = trainerIndex % 2 === 1;
+
+              return (
+                <Reveal key={trainer.name} blur delay={trainerIndex * 80}>
+                  <article
+                    className={cn(
+                      "grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start lg:gap-14",
+                      isReversed && "lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]",
+                    )}
+                  >
+                    <div
+                      className={cn(
+                        "relative",
+                        isReversed && "lg:order-2",
+                      )}
+                    >
+                      <div className="hover-lift relative aspect-[4/5] overflow-hidden rounded-lg border border-[#c5d0c0] bg-[#dbe4d7] shadow-[0_22px_50px_rgba(23,49,39,0.14)]">
+                        <Image
+                          src={trainer.image}
+                          alt={trainer.name}
+                          fill
+                          sizes="(max-width: 1024px) 100vw, 40vw"
+                          className="object-cover"
+                        />
+                        <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_55%,rgba(15,20,16,0.72))]" />
+                        <div className="absolute bottom-0 left-0 flex w-full items-end justify-between gap-4 px-5 pb-5 pt-12 text-white">
+                          <div>
+                            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#dec768]">
+                              {trainer.role}
+                            </p>
+                            <p className="mt-2 font-heading text-2xl leading-none">
+                              {trainer.name}
+                            </p>
+                          </div>
+                          <span className="font-heading text-5xl leading-none text-[#dec768]/80">
+                            {trainer.index}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      className={cn(
+                        "flex flex-col",
+                        isReversed && "lg:order-1",
+                      )}
+                    >
+                      <div className="flex items-baseline gap-4">
+                        <span className="font-heading text-5xl leading-none text-[#d26b51] sm:text-6xl">
+                          {trainer.index}
+                        </span>
+                        <span className="h-px flex-1 bg-[#c5d0c0]" />
+                        <span className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#596157]">
+                          {trainer.role}
+                        </span>
+                      </div>
+
+                      <h3 className="mt-6 font-heading text-balance text-4xl leading-[0.96] text-[#173127] sm:text-5xl">
+                        {trainer.name}
+                      </h3>
+
+                      <div className="mt-5 space-y-4 text-base leading-7 text-[#4d564b]">
+                        {trainer.bio.map((paragraph) => (
+                          <p key={paragraph}>{paragraph}</p>
+                        ))}
+                      </div>
+
+                      <blockquote className="mt-6 border-l-2 border-[#d26b51] pl-4 font-heading text-xl leading-snug text-[#173127]">
+                        «{trainer.quote}»
+                      </blockquote>
+
+                      <div className="hover-lift-soft mt-8 rounded-lg border border-[#1a2620] bg-[#121814] p-6 text-[#f6f3ec] shadow-[0_20px_50px_rgba(12,18,14,0.18)]">
+                        <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#dec768]">
+                          {trainer.credentialsTitle}
+                        </p>
+                        <ul className="mt-5 grid gap-x-6 gap-y-3 text-sm leading-6 text-white/80 sm:grid-cols-2">
+                          {trainer.credentials.map((item) => (
+                            <li key={item} className="flex gap-3">
+                              <span
+                                aria-hidden
+                                className="mt-0.5 shrink-0 text-base leading-none text-[#dec768]"
+                              >
+                                ⭐️
+                              </span>
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      <a
+                        href={trainer.cta.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className={cn(
+                          buttonVariants({ size: "lg" }),
+                          "hover-lift-soft mt-8 h-11 w-fit rounded-md border border-[#173127] bg-[#173127] px-5 text-sm text-[#f6f4ee] hover:bg-[#214133]",
+                        )}
+                      >
+                        {trainer.cta.label}
+                        <MoveRight className="size-4" />
+                      </a>
+                    </div>
+                  </article>
+                </Reveal>
+              );
+            })}
           </div>
         </div>
       </section>
