@@ -84,12 +84,11 @@ openingHoursSpecification: [
    ```
 5. Отправить sitemap (см. пункт 5)
 
-### 5. sitemap.xml + robots.txt
-Next.js генерирует их через файлы `app/sitemap.ts` и `app/robots.ts`.
+### 5. sitemap.xml + robots.txt — ✅ готово
+- [src/app/sitemap.ts](src/app/sitemap.ts) — генерирует `/sitemap.xml` со всеми страницами
+- [src/app/robots.ts](src/app/robots.ts) — генерирует `/robots.txt`, разрешает всё кроме `/api/`, указывает путь к sitemap
 
-Создать:
-- [src/app/sitemap.ts](src/app/sitemap.ts) — список всех страниц сайта с датами обновления
-- [src/app/robots.ts](src/app/robots.ts) — разрешить индексацию, указать путь к sitemap
+**После деплоя:** отправить `https://flowpilates.ru/sitemap.xml` в Я.Вебмастер и Google Search Console для ускорения индексации. При добавлении новых страниц — пополнить `sitemap.ts`.
 
 ### 6. Яндекс.Метрика + Google Analytics
 Это **аналитика поведения пользователей** (не SEO, но смежно).
