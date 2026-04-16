@@ -381,7 +381,7 @@ export default function Home() {
               style={{ "--hero-delay": "300ms" } as CSSProperties}
             >
               <div className="grid items-end gap-4 sm:grid-cols-[minmax(0,1fr)_190px]">
-                <div className="hover-lift overflow-hidden rounded-lg border border-white/12 bg-black/15 shadow-[0_18px_40px_rgba(0,0,0,0.2)] backdrop-blur-sm">
+                <div className="overflow-hidden rounded-lg border border-white/12 bg-black/15 shadow-[0_18px_40px_rgba(0,0,0,0.2)] backdrop-blur-sm">
                   <div className="relative aspect-[1.28] overflow-hidden border-b border-white/10 bg-[linear-gradient(180deg,rgba(215,236,189,0.12),rgba(10,12,11,0.16))]">
                     <Image
                       src={practiceSessionImage}
@@ -404,7 +404,7 @@ export default function Home() {
                 </div>
 
                 <div className="space-y-4">
-                  <div className="hover-lift-soft rounded-lg border border-white/12 bg-white/10 p-4 backdrop-blur-sm">
+                  <div className="rounded-lg border border-white/12 bg-white/10 p-4 backdrop-blur-sm">
                     <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#d7ecbd]">
                       Главная ценность
                     </p>
@@ -424,13 +424,14 @@ export default function Home() {
                     className="hover-lift-soft group block rounded-lg border border-white/12 bg-black/15 p-4 transition-colors hover:border-[#d7ecbd]/60"
                   >
                     <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#d7ecbd]">
-                      Видео студии
+                      Фото и видео
                     </p>
                     <p className="mt-3 text-sm leading-6 text-white/70">
-                      Фон в hero взят из ролика студии. Открыть полное видео.
+                      Загляните в атмосферу студии — практика, пространство и
+                      тренеры в кадрах.
                     </p>
                     <span className="mt-4 inline-flex items-center gap-2 text-sm text-white transition-colors group-hover:text-[#d7ecbd]">
-                      Смотреть во VK Video
+                      Смотреть подборку
                       <ArrowUpRight className="size-4" />
                     </span>
                   </a>
@@ -457,7 +458,7 @@ export default function Home() {
         className="scroll-mt-[7.5rem] bg-[#eef2eb] text-[#173127] md:scroll-mt-[8.25rem]"
       >
         <div className="section-shell grid gap-12 pt-18 pb-10 lg:grid-cols-[17rem_minmax(0,1fr)] lg:gap-16">
-          <Reveal className="lg:sticky lg:top-8 lg:self-start" direction="right" blur>
+          <Reveal className="lg:sticky lg:top-24 lg:self-start" direction="right" blur>
             <aside>
               <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#d26b51]">
                 Студия
@@ -527,7 +528,7 @@ export default function Home() {
             </div>
 
             <div className="grid gap-5 md:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]">
-              <div className="hover-lift relative aspect-[1.3] overflow-hidden rounded-lg">
+              <div className="relative aspect-[1.3] overflow-hidden rounded-lg">
                 <Image
                   src={heroPosterImage}
                   alt="Зал студии Flow Pilates"
@@ -547,7 +548,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="hover-lift relative aspect-[1.3] overflow-hidden rounded-lg md:aspect-auto md:h-full">
+              <div className="relative aspect-[1.3] overflow-hidden rounded-lg md:aspect-auto md:h-full">
                 <Image
                   src={methodFoundationImage}
                   alt="Основа метода Flow Pilates"
@@ -590,7 +591,7 @@ export default function Home() {
           </div>
 
           <Reveal delay={40} blur>
-            <article className="hover-lift mt-10 grid gap-8 rounded-lg border border-[#c5d0c0] bg-[#121814] p-6 text-white shadow-[0_20px_50px_rgba(12,18,14,0.12)] lg:grid-cols-[minmax(0,1fr)_18rem] lg:items-center lg:p-8">
+            <article className="mt-10 grid gap-8 rounded-lg border border-[#c5d0c0] bg-[#121814] p-6 text-white shadow-[0_20px_50px_rgba(12,18,14,0.12)] lg:grid-cols-[minmax(0,1fr)_18rem] lg:items-center lg:p-8">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.26em] text-[#dec768]">
                 {featuredProgram.subtitle}
@@ -622,7 +623,7 @@ export default function Home() {
                   rel="noreferrer"
                   className={cn(
                     buttonVariants({ size: "lg" }),
-                    "h-11 rounded-md border border-[#d7ecbd] bg-[#d7ecbd] px-5 text-sm text-[#173127] hover:bg-[#ecf8e1] hover:text-[#173127] focus-visible:text-[#173127]",
+                    "hover-lift h-11 rounded-md border border-[#d7ecbd] bg-[#d7ecbd] px-5 text-sm text-[#173127] hover:bg-[#ecf8e1] hover:text-[#173127] focus-visible:text-[#173127]",
                   )}
                 >
                   Записаться на реформер
@@ -636,7 +637,7 @@ export default function Home() {
                     "h-11 rounded-md border-white/18 bg-transparent px-5 text-sm text-white hover:bg-white/8 hover:text-white",
                   )}
                 >
-                  Открыть видео
+                  Посмотреть подборку
                 </a>
               </div>
             </div>
@@ -661,7 +662,7 @@ export default function Home() {
                 blur
               >
                 <article
-                  className="hover-lift-soft grid gap-6 border-t border-[#c5d0c0] py-6 md:grid-cols-[4.5rem_minmax(0,1fr)_7rem] md:items-center lg:grid-cols-[6rem_minmax(0,1fr)_9rem]"
+                  className="grid gap-6 border-t border-[#c5d0c0] py-6 md:grid-cols-[4.5rem_minmax(0,1fr)_7rem] md:items-center lg:grid-cols-[6rem_minmax(0,1fr)_9rem]"
               >
                 <div className="font-heading text-5xl leading-none text-[#173127]">
                   {program.index}
@@ -758,7 +759,7 @@ export default function Home() {
                         isReversed && "lg:order-2",
                       )}
                     >
-                      <div className="hover-lift relative aspect-[4/5] overflow-hidden rounded-lg border border-[#c5d0c0] bg-[#dbe4d7] shadow-[0_22px_50px_rgba(23,49,39,0.14)]">
+                      <div className="relative aspect-[4/5] overflow-hidden rounded-lg border border-[#c5d0c0] bg-[#dbe4d7] shadow-[0_22px_50px_rgba(23,49,39,0.14)]">
                         <Image
                           src={trainer.image}
                           alt={trainer.name}
@@ -813,7 +814,7 @@ export default function Home() {
                         «{trainer.quote}»
                       </blockquote>
 
-                      <div className="hover-lift-soft mt-8 rounded-lg border border-[#1a2620] bg-[#121814] p-6 text-[#f6f3ec] shadow-[0_20px_50px_rgba(12,18,14,0.18)]">
+                      <div className="mt-8 rounded-lg border border-[#1a2620] bg-[#121814] p-6 text-[#f6f3ec] shadow-[0_20px_50px_rgba(12,18,14,0.18)]">
                         <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#dec768]">
                           {trainer.credentialsTitle}
                         </p>
@@ -845,7 +846,7 @@ export default function Home() {
         className="scroll-mt-[7.5rem] bg-[#111512] text-[#f6f3ec] md:scroll-mt-[8.25rem]"
       >
         <div className="section-shell grid gap-10 py-18 lg:grid-cols-[19rem_minmax(0,1fr)] lg:gap-14">
-          <aside className="lg:sticky lg:top-8 lg:self-start">
+          <aside className="lg:sticky lg:top-24 lg:self-start">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#dec768]">
               Тарифы
             </p>
@@ -997,7 +998,7 @@ export default function Home() {
                     "hover-lift h-12 rounded-md border border-[#d7ecbd] bg-[#d7ecbd] px-5 text-sm text-[#173127] hover:bg-[#ecf8e1] hover:text-[#173127] focus-visible:text-[#173127]",
                   )}
                 >
-                  Записаться в YCLIENTS
+                  Записаться онлайн
                 </a>
                 <a
                   href={telegramLink}
@@ -1025,13 +1026,15 @@ export default function Home() {
                       rel={
                         contact.href.startsWith("http") ? "noreferrer" : undefined
                       }
-                      className="hover-lift-soft block h-full border-t border-white/12 pt-5 transition-colors hover:text-[#d7ecbd]"
+                      className="hover-lift-soft group block h-full border-t border-white/12 pt-5"
                     >
-                      <Icon className="size-5 text-[#dec768]" />
-                      <p className="mt-4 text-xs font-semibold uppercase tracking-[0.22em] text-white/58">
-                        {contact.label}
-                      </p>
-                      <p className="mt-3 max-w-xs text-sm leading-6 text-white/82">
+                      <div className="flex items-center gap-2.5">
+                        <Icon className="size-4 text-[#dec768]" />
+                        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/58 transition-colors group-hover:text-[#d7ecbd]">
+                          {contact.label}
+                        </p>
+                      </div>
+                      <p className="mt-3 max-w-xs text-sm leading-6 text-white/82 transition-colors group-hover:text-[#d7ecbd]">
                         {contact.value}
                       </p>
                       </a>
