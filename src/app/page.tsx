@@ -150,7 +150,6 @@ const trainers = [
       "Реформер 2 (Balanced Body)",
       "Стол-Трапеция, Кадиллак (Balanced Body)",
     ],
-    cta: { label: "Записаться к Екатерине", href: bookingLink },
   },
   {
     index: "02",
@@ -170,7 +169,6 @@ const trainers = [
       "Коррекция осанки. Сколиозы («РеалФит»)",
       "Реабилитация после травм плеча, локтя, шеи («РеалФит»)",
     ],
-    cta: { label: "Записаться к Кристине", href: bookingLink },
   },
 ];
 
@@ -833,19 +831,6 @@ export default function Home() {
                           ))}
                         </ul>
                       </div>
-
-                      <a
-                        href={trainer.cta.href}
-                        target="_blank"
-                        rel="noreferrer"
-                        className={cn(
-                          buttonVariants({ size: "lg" }),
-                          "hover-lift-soft mt-8 h-11 w-fit rounded-md border border-[#173127] bg-[#173127] px-5 text-sm text-[#f6f4ee] hover:bg-[#214133]",
-                        )}
-                      >
-                        {trainer.cta.label}
-                        <MoveRight className="size-4" />
-                      </a>
                     </div>
                   </article>
                 </Reveal>
