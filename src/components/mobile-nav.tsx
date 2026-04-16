@@ -28,11 +28,9 @@ export function MobileNav({
   whatsappLink,
 }: MobileNavProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
 
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
+  /** `document` exists only in the browser; avoids createPortal during SSR. */
+  const canUseDom = typeof document !== "undefined";
 
   useEffect(() => {
     if (!isOpen) {
@@ -63,7 +61,7 @@ export function MobileNav({
   const closeMenu = () => setIsOpen(false);
 
   const menuOverlay =
-    isMounted && isOpen
+    canUseDom && isOpen
       ? createPortal(
           <div
             id="mobile-menu-panel"
@@ -162,7 +160,7 @@ export function MobileNav({
           "h-10 rounded-md border border-[#d7ecbd] bg-[#d7ecbd] px-4 text-sm text-[#173127] hover:bg-[#ecf8e1] hover:text-[#173127] focus-visible:text-[#173127]",
         )}
       >
-        Запись
+        Записаться
       </a>
 
       <button

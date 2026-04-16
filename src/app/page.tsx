@@ -346,17 +346,6 @@ export default function Home() {
                 >
                   Поймать баланс
                 </a>
-                <a
-                  href={bookingLink}
-                  target="_blank"
-                  rel="noreferrer"
-                  className={cn(
-                    buttonVariants({ variant: "outline", size: "lg" }),
-                    "hover-lift-soft h-12 rounded-md border-white/20 bg-white/8 px-5 text-sm text-white hover:bg-white/12 hover:text-white",
-                  )}
-                >
-                  Открыть запись
-                </a>
               </div>
 
               <div
@@ -455,7 +444,7 @@ export default function Home() {
 
       <section
         id="studio"
-        className="scroll-mt-[7.5rem] bg-[#eef2eb] text-[#173127] md:scroll-mt-[8.25rem]"
+        className="scroll-mt-14 bg-[#eef2eb] text-[#173127]"
       >
         <div className="section-shell grid gap-12 pt-18 pb-10 lg:grid-cols-[17rem_minmax(0,1fr)] lg:gap-16">
           <Reveal className="lg:sticky lg:top-24 lg:self-start" direction="right" blur>
@@ -574,7 +563,7 @@ export default function Home() {
 
       <section
         id="formats"
-        className="scroll-mt-[7.5rem] bg-[#eef2eb] md:scroll-mt-[8.25rem]"
+        className="scroll-mt-14 bg-[#eef2eb]"
       >
         <div className="section-shell pt-10 pb-18">
           <div className="max-w-3xl">
@@ -707,7 +696,7 @@ export default function Home() {
 
       <section
         id="trainers"
-        className="relative scroll-mt-[7.5rem] overflow-hidden bg-[#eef2eb] text-[#173127] md:scroll-mt-[8.25rem]"
+        className="relative scroll-mt-14 overflow-hidden bg-[#eef2eb] text-[#173127]"
       >
         <div
           aria-hidden
@@ -843,7 +832,7 @@ export default function Home() {
 
       <section
         id="pricing"
-        className="scroll-mt-[7.5rem] bg-[#111512] text-[#f6f3ec] md:scroll-mt-[8.25rem]"
+        className="scroll-mt-14 bg-[#111512] text-[#f6f3ec]"
       >
         <div className="section-shell grid gap-10 py-18 lg:grid-cols-[19rem_minmax(0,1fr)] lg:gap-14">
           <aside className="lg:sticky lg:top-24 lg:self-start">
@@ -961,7 +950,7 @@ export default function Home() {
 
       <section
         id="contacts"
-        className="relative isolate scroll-mt-[7.5rem] overflow-hidden bg-[#132018] text-[#f6f3ec] md:scroll-mt-[8.25rem]"
+        className="relative isolate scroll-mt-14 overflow-hidden bg-[#132018] text-[#f6f3ec]"
       >
         <div className="absolute inset-0">
           <Image
@@ -1015,18 +1004,18 @@ export default function Home() {
               </div>
 
               <div className="mt-10 grid gap-6 md:grid-cols-3">
-                {contacts.map((contact, index) => {
+                {contacts.map((contact) => {
                   const Icon = contact.icon;
 
                   return (
-                    <Reveal key={contact.label} delay={index * 90} blur className="h-full">
-                      <a
+                    <a
+                      key={contact.label}
                       href={contact.href}
                       target={contact.href.startsWith("http") ? "_blank" : undefined}
                       rel={
                         contact.href.startsWith("http") ? "noreferrer" : undefined
                       }
-                      className="hover-lift-soft group block h-full border-t border-white/12 pt-5"
+                      className="hover-lift-soft group block border-t border-white/12 pt-5"
                     >
                       <div className="flex items-center gap-2.5">
                         <Icon className="size-4 text-[#dec768]" />
@@ -1037,8 +1026,7 @@ export default function Home() {
                       <p className="mt-3 max-w-xs text-sm leading-6 text-white/82 transition-colors group-hover:text-[#d7ecbd]">
                         {contact.value}
                       </p>
-                      </a>
-                    </Reveal>
+                    </a>
                   );
                 })}
               </div>
