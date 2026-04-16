@@ -11,7 +11,9 @@ export const termsLink = "/terms";
 export const heroVideoLink =
   "https://vkvideo.ru/video72587992_456239758?list=ln-2KATAulJ47pVPb6xNW";
 
-export const mainNavigation = [
+export type NavigationItem = { label: string; href: string };
+
+export const mainNavigation: NavigationItem[] = [
   { label: "Студия", href: "/#studio" },
   { label: "Форматы", href: "/#formats" },
   { label: "Тренеры", href: "/#trainers" },

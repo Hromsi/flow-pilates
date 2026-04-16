@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import { MobileNav } from "@/components/mobile-nav";
@@ -28,16 +30,17 @@ export function SiteHeader({
   whatsappLink,
   alwaysDark = false,
 }: SiteHeaderProps) {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
+  const [scrollPastThreshold, setScrollPastThreshold] = useState(false);
+  const isScrolled = alwaysDark || scrollPastThreshold;
 
   useEffect(() => {
     if (alwaysDark) {
-      setIsScrolled(true);
       return;
     }
 
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      setScrollPastThreshold(window.scrollY > 10);
     };
 
     handleScroll();
@@ -94,12 +97,23 @@ export function SiteHeader({
         </div>
 
         <nav className="flex h-14 items-center justify-between gap-4 border-b border-white/10">
-          <a
-            href="#top"
+          <Link
+            href="/#top"
+            scroll={false}
             className="font-heading text-base uppercase tracking-[0.34em] text-[#d7ecbd] transition-colors hover:text-[#ecf8e1]"
+            onClick={(event) => {
+              if (pathname !== "/") {
+                return;
+              }
+              event.preventDefault();
+              document.getElementById("top")?.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }}
           >
             Flow Pilates
-          </a>
+          </Link>
 
           <div className="hidden items-center gap-7 md:flex">
             {navigation.map((item) => (
