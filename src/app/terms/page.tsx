@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, MoveRight } from "lucide-react";
+import { ArrowLeft, FileText, MoveRight } from "lucide-react";
 
 import { Reveal } from "@/components/reveal";
 import { SiteHeader } from "@/components/site-header";
 import { buttonVariants } from "@/components/ui/button";
+import { studioDocuments } from "@/data/documents";
 import { cn } from "@/lib/utils";
 import {
   bookingLink,
@@ -174,6 +175,52 @@ export default function TermsPage() {
               </article>
             </Reveal>
           ))}
+        </div>
+      </section>
+
+      <section className="bg-[#eef2eb] text-[#173127]">
+        <div className="section-shell pb-18">
+          <Reveal blur>
+            <div className="border-t border-[#c5d0c0] pt-10">
+              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#d26b51]">
+                Полные документы
+              </p>
+              <h2 className="mt-4 max-w-3xl font-heading text-3xl leading-[1.05] text-[#173127] sm:text-4xl">
+                Юридические документы студии для внимательного прочтения.
+              </h2>
+              <p className="mt-4 max-w-2xl text-base leading-7 text-[#556154]">
+                Эта страница — краткая сводка главных правил. Полные документы
+                доступны в PDF для скачивания.
+              </p>
+
+              <ul className="mt-8 grid gap-4 md:grid-cols-3">
+                {studioDocuments.map((document) => (
+                  <li key={document.href}>
+                    <a
+                      href={document.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="group flex h-full flex-col gap-3 rounded-lg border border-[#c5d0c0] bg-white/50 p-5 transition-colors hover:border-[#173127] hover:bg-white"
+                    >
+                      <FileText className="size-5 text-[#d26b51]" />
+                      <div>
+                        <p className="font-heading text-xl leading-tight text-[#173127] transition-colors group-hover:text-[#0f1410]">
+                          {document.title}
+                        </p>
+                        <p className="mt-2 text-sm leading-6 text-[#556154]">
+                          {document.description}
+                        </p>
+                      </div>
+                      <span className="mt-auto inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.22em] text-[#d26b51]">
+                        Скачать PDF
+                        <MoveRight className="size-3.5" />
+                      </span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
         </div>
       </section>
 

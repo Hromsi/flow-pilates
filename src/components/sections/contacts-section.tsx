@@ -1,8 +1,9 @@
 import Image from "next/image";
-import { Send } from "lucide-react";
+import { FileText, Send } from "lucide-react";
 
 import { buttonVariants } from "@/components/ui/button";
 import { type Contact, contacts, contactsCopy } from "@/data/contacts";
+import { documentsCopy, studioDocuments } from "@/data/documents";
 import { practiceSessionImage } from "@/lib/images";
 import { bookingLink, telegramLink } from "@/lib/links";
 import { cn } from "@/lib/utils";
@@ -122,6 +123,32 @@ function ContactsAside() {
         <p className="mt-4 text-sm leading-7 text-white/74">
           {contactsCopy.aboutDescription}
         </p>
+      </div>
+
+      <div className="border-t border-white/12 pt-5">
+        <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#dec768]">
+          {documentsCopy.kicker}
+        </p>
+        <p className="mt-4 text-sm leading-7 text-white/74">
+          {documentsCopy.description}
+        </p>
+        <ul className="mt-4 space-y-2">
+          {studioDocuments.map((document) => (
+            <li key={document.href}>
+              <a
+                href={document.href}
+                target="_blank"
+                rel="noreferrer"
+                className="group inline-flex items-center gap-2 text-sm text-white/82 transition-colors hover:text-[#d7ecbd]"
+              >
+                <FileText className="size-4 shrink-0 text-[#dec768] transition-colors group-hover:text-[#d7ecbd]" />
+                <span className="underline-offset-4 group-hover:underline">
+                  {document.title}
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
 
       <div className="border-t border-white/12 pt-5">
