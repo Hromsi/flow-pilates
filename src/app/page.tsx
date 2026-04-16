@@ -891,32 +891,31 @@ export default function Home() {
                 key={price.title}
                 delay={index * 80}
                 blur
+                className="h-full"
               >
                 <article
                   className={cn(
-                  "hover-lift rounded-lg border p-5 shadow-[0_18px_40px_rgba(0,0,0,0.16)]",
+                  "hover-lift relative flex h-full flex-col rounded-lg border p-5 shadow-[0_18px_40px_rgba(0,0,0,0.16)]",
                   price.highlight
                     ? "border-[#dec768] bg-[#171f19]"
                     : "border-white/10 bg-white/4",
                 )}
               >
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/54">
-                      {price.note}
-                    </p>
-                    <h3 className="mt-3 font-heading text-3xl leading-none">
-                      {price.title}
-                    </h3>
-                  </div>
-                  {price.highlight ? (
-                    <span className="rounded-md border border-[#dec768]/50 px-2 py-1 text-[11px] uppercase tracking-[0.2em] text-[#dec768]">
-                      studio pick
-                    </span>
-                  ) : null}
+                {price.highlight ? (
+                  <span className="absolute -top-3 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap rounded-md border border-[#dec768]/60 bg-[#171f19] py-1 pl-2 pr-[calc(0.5rem-0.2em)] text-[11px] uppercase tracking-[0.2em] text-[#dec768]">
+                    Популярное
+                  </span>
+                ) : null}
+                <div>
+                  <p className="text-[0.6rem] font-semibold uppercase tracking-[0.22em] text-white/54 md:min-h-8">
+                    {price.note}
+                  </p>
+                  <h3 className="mt-3 font-heading text-2xl leading-none lg:min-h-[3rem] xl:min-h-[3rem]">
+                    {price.title}
+                  </h3>
                 </div>
 
-                <p className="mt-5 font-heading text-5xl leading-none text-[#f7f4eb]">
+                <p className="mt-5 whitespace-nowrap font-heading text-[2rem] leading-none text-[#f7f4eb]">
                   {price.price}
                 </p>
 
@@ -929,17 +928,19 @@ export default function Home() {
                   ))}
                 </ul>
 
-                <a
-                  href={price.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className={cn(
-                    buttonVariants({ variant: "outline", size: "lg" }),
-                    "mt-6 h-11 w-full rounded-md border-white/14 bg-transparent text-sm text-white hover:bg-white/8 hover:text-white",
-                  )}
-                >
-                  Открыть запись
-                </a>
+                <div className="mt-auto pt-6">
+                  <a
+                    href={price.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={cn(
+                      buttonVariants({ variant: "outline", size: "lg" }),
+                      "h-11 w-full rounded-md border-white/14 bg-transparent text-sm text-white hover:bg-white/8 hover:text-white",
+                    )}
+                  >
+                    Открыть запись
+                  </a>
+                </div>
                 </article>
               </Reveal>
             ))}
