@@ -3,4 +3,4 @@ export const practiceSessionImage =
   "/images/flow-pilates/practice-session.jpg";
 export const methodFoundationImage =
   "/images/flow-pilates/method-foundation.jpg";
-export const heroVideoBackgroundUrl = "/api/hero-video";
+export const heroVideoBackgroundUrl = "/videos/flowpilates-hero.mp4";
