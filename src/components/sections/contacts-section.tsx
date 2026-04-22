@@ -4,17 +4,25 @@ import { FileText, Send } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { type Contact, contacts, contactsCopy } from "@/data/contacts";
 import { documentsCopy, studioDocuments } from "@/data/documents";
-import { practiceSessionImage } from "@/lib/images";
+import { contactsDesktopImage, practiceSessionImage } from "@/lib/images";
 import { bookingLink, telegramLink } from "@/lib/links";
 import { cn } from "@/lib/utils";
 
-export function ContactsSection() {
+type ContactsSectionProps = {
+  id?: string;
+  desktopImage?: string;
+};
+
+export function ContactsSection({
+  id = "contacts",
+  desktopImage = contactsDesktopImage,
+}: ContactsSectionProps) {
   return (
     <section
-      id="contacts"
+      id={id}
       className="relative isolate scroll-mt-14 overflow-hidden bg-[#132018] text-[#f6f3ec]"
     >
-      <ContactsBackground />
+      <ContactsBackground desktopImage={desktopImage} />
 
       <div className="section-shell relative py-18">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_21rem] lg:gap-16">
@@ -26,7 +34,7 @@ export function ContactsSection() {
   );
 }
 
-function ContactsBackground() {
+function ContactsBackground({ desktopImage }: { desktopImage: string }) {
   return (
     <div className="absolute inset-0">
       <Image
@@ -34,7 +42,14 @@ function ContactsBackground() {
         alt="Студия Flow Pilates"
         fill
         sizes="100vw"
-        className="object-cover"
+        className="object-cover lg:hidden"
+      />
+      <Image
+        src={desktopImage}
+        alt="Студия Flow Pilates"
+        fill
+        sizes="100vw"
+        className="hidden object-cover lg:block"
       />
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(12,17,13,0.9)_0%,rgba(12,17,13,0.72)_45%,rgba(12,17,13,0.82)_100%)]" />
     </div>
