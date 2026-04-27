@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -100,7 +101,8 @@ export function SiteHeader({
           <Link
             href="/#top"
             scroll={false}
-            className="font-heading text-base uppercase tracking-[0.34em] text-[#d7ecbd] transition-colors hover:text-[#ecf8e1]"
+            aria-label="Flow Pilates"
+            className="inline-flex items-center transition-opacity hover:opacity-80"
             onClick={(event) => {
               if (pathname !== "/") {
                 return;
@@ -112,7 +114,14 @@ export function SiteHeader({
               });
             }}
           >
-            Flow Pilates
+            <Image
+              src="/logo-mark.svg"
+              alt="Flow Pilates"
+              width={520}
+              height={310}
+              priority
+              className="h-10 w-auto"
+            />
           </Link>
 
           <div className="hidden items-center gap-7 md:flex">
