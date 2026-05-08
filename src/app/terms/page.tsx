@@ -10,9 +10,9 @@ import { cn } from "@/lib/utils";
 import {
   bookingLink,
   mainNavigation,
+  maxLink,
   phoneLink,
   telegramLink,
-  whatsappLink,
 } from "@/lib/links";
 
 export const metadata: Metadata = {
@@ -98,8 +98,8 @@ export default function TermsPage() {
       <SiteHeader
         navigation={mainNavigation}
         bookingLink={bookingLink}
-        whatsappLink={whatsappLink}
         telegramLink={telegramLink}
+        maxLink={maxLink}
         phoneLink={phoneLink}
         alwaysDark
       />
@@ -248,7 +248,7 @@ export default function TermsPage() {
               <MoveRight className="size-4" />
             </a>
             <a
-              href={whatsappLink}
+              href={maxLink}
               target="_blank"
               rel="noreferrer"
               className={cn(

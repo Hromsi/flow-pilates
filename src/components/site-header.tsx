@@ -19,7 +19,7 @@ type SiteHeaderProps = {
   navigation: NavigationItem[];
   phoneLink: string;
   telegramLink: string;
-  whatsappLink: string;
+  maxLink: string;
   alwaysDark?: boolean;
 };
 
@@ -28,7 +28,7 @@ export function SiteHeader({
   navigation,
   phoneLink,
   telegramLink,
-  whatsappLink,
+  maxLink,
   alwaysDark = false,
 }: SiteHeaderProps) {
   const pathname = usePathname();
@@ -83,15 +83,15 @@ export function SiteHeader({
                 rel="noreferrer"
                 className="transition-colors hover:text-[#d7ecbd]"
               >
-                Telegram
+                Телеграм
               </a>
               <a
-                href={whatsappLink}
+                href={maxLink}
                 target="_blank"
                 rel="noreferrer"
                 className="transition-colors hover:text-[#d7ecbd]"
               >
-                WhatsApp
+                Макс
               </a>
             </div>
           </div>
@@ -151,8 +151,8 @@ export function SiteHeader({
           <MobileNav
             navigation={navigation}
             bookingLink={bookingLink}
-            whatsappLink={whatsappLink}
             telegramLink={telegramLink}
+            maxLink={maxLink}
             phoneLink={phoneLink}
           />
         </nav>

@@ -1,7 +1,7 @@
 import { Reveal } from "@/components/reveal";
 import { buttonVariants } from "@/components/ui/button";
 import { type Price, prices, pricingCopy } from "@/data/prices";
-import { whatsappLink } from "@/lib/links";
+import { maxLink } from "@/lib/links";
 import { cn } from "@/lib/utils";
 
 export function PricingSection() {
@@ -44,7 +44,7 @@ function PricingAside() {
       </p>
 
       <a
-        href={whatsappLink}
+        href={maxLink}
         target="_blank"
         rel="noreferrer"
         className={cn(

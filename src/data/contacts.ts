@@ -18,7 +18,7 @@ export const contacts: Contact[] = [
     icon: Phone,
   },
   {
-    label: "Email",
+    label: "Эл. почта",
     value: "Keit-Obninsk@yandex.ru",
     href: mailLink,
     icon: Mail,
@@ -37,7 +37,7 @@ export const contactsCopy = {
   description:
     "Записывайтесь онлайн, задавайте вопросы в мессенджерах и приходите в студию в Обнинске. Ждем вас.",
   bookingCta: "Записаться онлайн",
-  telegramCta: "Написать в Telegram",
+  telegramCta: "Написать в Телеграм",
   aboutKicker: "Что есть в студии",
   aboutDescription:
     "Реформер, пилатес с малым оборудованием, персональная работа, сплит-тренировки и отдельные программы для подростков 12-16.",

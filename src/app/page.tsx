@@ -9,9 +9,9 @@ import { SiteHeader } from "@/components/site-header";
 import {
   bookingLink,
   mainNavigation,
+  maxLink,
   phoneLink,
   telegramLink,
-  whatsappLink,
 } from "@/lib/links";
 
 export default function Home() {
@@ -20,8 +20,8 @@ export default function Home() {
       <SiteHeader
         navigation={mainNavigation}
         bookingLink={bookingLink}
-        whatsappLink={whatsappLink}
         telegramLink={telegramLink}
+        maxLink={maxLink}
         phoneLink={phoneLink}
       />
 

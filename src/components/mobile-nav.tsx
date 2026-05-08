@@ -17,7 +17,7 @@ type MobileNavProps = {
   navigation: NavigationItem[];
   phoneLink: string;
   telegramLink: string;
-  whatsappLink: string;
+  maxLink: string;
 };
 
 export function MobileNav({
@@ -25,7 +25,7 @@ export function MobileNav({
   navigation,
   phoneLink,
   telegramLink,
-  whatsappLink,
+  maxLink,
 }: MobileNavProps) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -123,16 +123,16 @@ export function MobileNav({
                     onClick={closeMenu}
                     className="transition-colors hover:text-[#d7ecbd]"
                   >
-                    Telegram
+                    Телеграм
                   </a>
                   <a
-                    href={whatsappLink}
+                    href={maxLink}
                     target="_blank"
                     rel="noreferrer"
                     onClick={closeMenu}
                     className="transition-colors hover:text-[#d7ecbd]"
                   >
-                    WhatsApp
+                    Макс
                   </a>
                   <a
                     href={phoneLink}

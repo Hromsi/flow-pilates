@@ -57,10 +57,7 @@ export const localBusinessSchema = {
     name: "Екатерина Хромченкова",
     jobTitle: "Основатель и тренер",
   },
-  sameAs: [
-    "https://t.me/+fQooG2dMMcc4NmRi",
-    "https://api.whatsapp.com/send/?phone=79857148630",
-  ],
+  sameAs: ["https://t.me/+fQooG2dMMcc4NmRi"],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Форматы тренировок",
@@ -71,7 +68,7 @@ export const localBusinessSchema = {
           "@type": "Service",
           name: "Тренировки на реформере",
           description:
-            "Групповые тренировки на профессиональном оборудовании пилатеса — Reformer.",
+            "Групповые тренировки на профессиональном оборудовании пилатеса — Реформер.",
         },
         price: "1500",
         priceCurrency: "RUB",

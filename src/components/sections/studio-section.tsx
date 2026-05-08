@@ -75,7 +75,7 @@ function StudioAside() {
             "hover-lift-soft h-11 rounded-md border-[#c5d0c0] bg-transparent px-5 text-sm text-[#173127] hover:bg-[#e5ece0]",
           )}
         >
-          Перейти в Telegram
+          Перейти в Телеграм
         </a>
       </div>
     </aside>

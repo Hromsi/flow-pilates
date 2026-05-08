@@ -1,4 +1,4 @@
-import { bookingLink, whatsappLink } from "@/lib/links";
+import { bookingLink, maxLink } from "@/lib/links";
 
 export type FeaturedProgram = {
   title: string;
@@ -23,7 +23,7 @@ export const featuredProgram: FeaturedProgram = {
   title: "Тренировки на реформере",
   subtitle: "Флагманское направление студии",
   description:
-    "Система упражнений, выполняемых на большом оборудовании пилатеса - Reformer.",
+    "Система упражнений, выполняемых на большом оборудовании пилатеса - Реформер.",
   points: [
     "Тренировка направлена на укрепление всех частей тела и применима к любому виду активности. Помогает улучшить физическую форму, обрести гармонию тела и духа, повысить общую выносливость без вреда для здоровья.",
     "Стретчинг + Реформер объединяет упражнения на гибкость с использованием реформера и техники самомассажа (МФР).",
@@ -53,7 +53,7 @@ export const programs: Program[] = [
       "Программа выстраивается с учетом текущего уровня подготовки, особенностей здоровья и пожеланий.",
     image: "/images/flow-pilates/personal-training.png",
     action: "Написать администратору",
-    href: whatsappLink,
+    href: maxLink,
   },
   {
     index: "04",
@@ -64,7 +64,7 @@ export const programs: Program[] = [
       "Формат учитывает уровень подготовки, особенности здоровья и пожелания обоих участников.",
     image: "/images/flow-pilates/split-training.png",
     action: "Обсудить формат",
-    href: whatsappLink,
+    href: maxLink,
   },
   {
     index: "05",

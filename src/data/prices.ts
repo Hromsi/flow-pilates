@@ -1,4 +1,4 @@
-import { bookingLink, whatsappLink } from "@/lib/links";
+import { bookingLink, maxLink } from "@/lib/links";
 
 export type Price = {
   title: string;
@@ -45,7 +45,7 @@ export const prices: Price[] = [
       "Абонемент на 8 персональных тренировок - 19 600 руб.",
       "Абонемент на 12 персональных тренировок - 28 800 руб.",
     ],
-    href: whatsappLink,
+    href: maxLink,
   },
   {
     title: "Сплит-тренировки (2 чел.)",
@@ -57,7 +57,7 @@ export const prices: Price[] = [
       "Абонемент на 8 групповых тренировок - 32 000 руб.",
       "Абонемент на 12 групповых тренировок - 46 800 руб.",
     ],
-    href: whatsappLink,
+    href: maxLink,
   },
   {
     title: "Тренировки для подростков",
