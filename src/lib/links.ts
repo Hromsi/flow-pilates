@@ -9,6 +9,7 @@ export const mapsLink =
 export const termsLink = "/terms";
 export const heroVideoLink =
   "https://vkvideo.ru/video72587992_456239758?list=ln-2KATAulJ47pVPb6xNW";
+export const albumLink = "https://vk.ru/album-232257499_308582240";
 
 export type NavigationItem = { label: string; href: string };
 

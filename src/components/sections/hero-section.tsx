@@ -10,7 +10,7 @@ import {
   heroVideoBackgroundUrl,
   practiceSessionImage,
 } from "@/lib/images";
-import { heroVideoLink } from "@/lib/links";
+import { albumLink } from "@/lib/links";
 import { cn } from "@/lib/utils";
 
 export function HeroSection() {
@@ -158,7 +158,7 @@ function HeroAside() {
           </div>
 
           <a
-            href={heroVideoLink}
+            href={albumLink}
             target="_blank"
             rel="noreferrer"
             className="hover-lift-soft group block rounded-lg border border-white/12 bg-black/15 p-4 transition-colors hover:border-[#d7ecbd]/60"

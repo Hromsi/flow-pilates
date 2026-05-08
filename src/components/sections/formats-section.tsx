@@ -9,7 +9,7 @@ import {
   formatsCopy,
   programs,
 } from "@/data/programs";
-import { bookingLink, heroVideoLink } from "@/lib/links";
+import { albumLink, bookingLink } from "@/lib/links";
 import { cn } from "@/lib/utils";
 
 export function FormatsSection() {
@@ -90,7 +90,7 @@ function FeaturedProgramCard() {
             Записаться на реформер
           </a>
           <a
-            href={heroVideoLink}
+            href={albumLink}
             target="_blank"
             rel="noreferrer"
             className={cn(
