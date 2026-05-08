@@ -29,7 +29,7 @@ export const featuredProgram: FeaturedProgram = {
     "Стретчинг + Реформер объединяет упражнения на гибкость с использованием реформера и техники самомассажа (МФР).",
   ],
   note: "55 минут • любой уровень",
-  image: "/images/flow-pilates/reformer-program.png",
+  image: "/images/flow-pilates/reformer-program.jpg",
 };
 
 export const programs: Program[] = [

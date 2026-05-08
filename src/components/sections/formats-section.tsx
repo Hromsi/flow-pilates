@@ -109,7 +109,7 @@ function FeaturedProgramCard() {
           alt={featuredProgram.title}
           fill
           sizes="(max-width: 1024px) 100vw, 18rem"
-          className="object-contain p-8"
+          className="object-cover"
         />
       </div>
     </article>
