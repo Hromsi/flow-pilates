@@ -29,7 +29,7 @@ export const featuredProgram: FeaturedProgram = {
     "Стретчинг + Реформер объединяет упражнения на гибкость с использованием реформера и техники самомассажа (МФР).",
   ],
   note: "55 минут • любой уровень",
-  image: "/images/flow-pilates/reformer-program.jpg",
+  image: "/images/flow-pilates/reformer-training.jpg",
 };
 
 export const programs: Program[] = [
@@ -40,7 +40,7 @@ export const programs: Program[] = [
       "Система упражнений, выполняемых на коврике. Направлена на проработку глубоких мышц живота и спины, улучшение осанки и снижение риска травм.",
     detail:
       "На тренировке используется малое оборудование пилатеса: изотоническое кольцо, ролл, лента и мяч.",
-    image: "/images/flow-pilates/mat-program.png",
+    image: "/images/flow-pilates/mat-pilates.jpg",
     action: "Выбрать время",
     href: bookingLink,
   },
@@ -51,7 +51,7 @@ export const programs: Program[] = [
       "Тренировка один на один с тренером, полностью сфокусированная на ваши цели и задачи.",
     detail:
       "Программа выстраивается с учетом текущего уровня подготовки, особенностей здоровья и пожеланий.",
-    image: "/images/flow-pilates/personal-training.png",
+    image: "/images/flow-pilates/personal-training.jpg",
     action: "Написать администратору",
     href: maxLink,
   },
@@ -62,7 +62,7 @@ export const programs: Program[] = [
       "Индивидуальная программа, разработанная для занятий в паре, с профессиональным контролем и поддержкой тренера.",
     detail:
       "Формат учитывает уровень подготовки, особенности здоровья и пожелания обоих участников.",
-    image: "/images/flow-pilates/split-training.png",
+    image: "/images/flow-pilates/split-training.jpg",
     action: "Обсудить формат",
     href: maxLink,
   },
@@ -73,7 +73,7 @@ export const programs: Program[] = [
       "Занятия направлены на укрепление опорно-двигательного аппарата и развитие физических качеств.",
     detail:
       "Первая часть тренировки проходит на коврике, вторая - на реформере. Формат помогает снизить уровень стресса и привить любовь к физической активности.",
-    image: "/images/flow-pilates/teens-training.png",
+    image: "/images/flow-pilates/teens-pilates.jpg",
     action: "Записать подростка",
     href: bookingLink,
   },

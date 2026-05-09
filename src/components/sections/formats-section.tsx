@@ -150,7 +150,7 @@ function ProgramRow({ program }: { program: Program }) {
           alt={program.title}
           fill
           sizes="(max-width: 1024px) 100vw, 9rem"
-          className="object-contain p-4"
+          className="object-cover"
         />
       </div>
     </article>
