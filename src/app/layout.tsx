@@ -12,6 +12,7 @@ import {
   siteUrl,
 } from "@/lib/seo";
 
+import { CookieConsent } from "@/components/cookie-consent";
 import { ScrollToHash } from "@/components/scroll-to-hash";
 import { YandexMetrikaProvider } from "@/components/yandex-metrika-provider";
 
@@ -106,6 +107,7 @@ export default function RootLayout({
         <YandexMetrikaProvider />
         <ScrollToHash />
         {children}
+        <CookieConsent />
       </body>
     </html>
   );

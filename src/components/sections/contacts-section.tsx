@@ -1,11 +1,12 @@
 import Image from "next/image";
-import { FileText, Send } from "lucide-react";
+import Link from "next/link";
+import { FileText, Send, ShieldCheck } from "lucide-react";
 
 import { buttonVariants } from "@/components/ui/button";
 import { type Contact, contacts, contactsCopy } from "@/data/contacts";
 import { documentsCopy, studioDocuments } from "@/data/documents";
 import { practiceSessionImage } from "@/lib/images";
-import { bookingLink, telegramLink } from "@/lib/links";
+import { bookingLink, privacyPolicyLink, telegramLink } from "@/lib/links";
 import { cn } from "@/lib/utils";
 
 export function ContactsSection() {
@@ -148,6 +149,17 @@ function ContactsAside() {
               </a>
             </li>
           ))}
+          <li>
+            <Link
+              href={privacyPolicyLink}
+              className="group inline-flex items-center gap-2 text-sm text-white/82 transition-colors hover:text-[#d7ecbd]"
+            >
+              <ShieldCheck className="size-4 shrink-0 text-[#dec768] transition-colors group-hover:text-[#d7ecbd]" />
+              <span className="underline-offset-4 group-hover:underline">
+                Политика конфиденциальности
+              </span>
+            </Link>
+          </li>
         </ul>
       </div>
 
