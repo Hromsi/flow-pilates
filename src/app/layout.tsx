@@ -13,6 +13,7 @@ import {
 } from "@/lib/seo";
 
 import { ScrollToHash } from "@/components/scroll-to-hash";
+import { YandexMetrikaProvider } from "@/components/yandex-metrika-provider";
 
 import "./globals.css";
 
@@ -102,6 +103,7 @@ export default function RootLayout({
             __html: JSON.stringify(localBusinessSchema),
           }}
         />
+        <YandexMetrikaProvider />
         <ScrollToHash />
         {children}
       </body>
