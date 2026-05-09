@@ -6,7 +6,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { type Contact, contacts, contactsCopy } from "@/data/contacts";
 import { documentsCopy, studioDocuments } from "@/data/documents";
 import { practiceSessionImage } from "@/lib/images";
-import { bookingLink, privacyPolicyLink, telegramLink } from "@/lib/links";
+import { bookingLink, maxLink, privacyPolicyLink } from "@/lib/links";
 import { cn } from "@/lib/utils";
 
 export function ContactsSection() {
@@ -68,7 +68,7 @@ function ContactsMain() {
           {contactsCopy.bookingCta}
         </a>
         <a
-          href={telegramLink}
+          href={maxLink}
           target="_blank"
           rel="noreferrer"
           className={cn(
@@ -77,7 +77,7 @@ function ContactsMain() {
           )}
         >
           <Send className="size-4" />
-          {contactsCopy.telegramCta}
+          {contactsCopy.maxCta}
         </a>
       </div>
 
