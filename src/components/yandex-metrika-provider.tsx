@@ -4,23 +4,20 @@ import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import ym, { YMInitializer } from "react-yandex-metrika";
 
-import { useCookieConsent } from "./cookie-consent";
-
 const YANDEX_METRIKA_ID = 106524733;
 const isProduction = process.env.NODE_ENV === "production";
 
 export const YandexMetrikaProvider = () => {
   const pathname = usePathname();
-  const hasConsent = useCookieConsent();
 
   useEffect(() => {
-    if (!hasConsent || !pathname) return;
+    if (!pathname || !isProduction) return;
     if (typeof window === "undefined") return;
     if (typeof (window as unknown as { ym?: unknown }).ym !== "function") return;
     ym("hit", pathname);
-  }, [pathname, hasConsent]);
+  }, [pathname]);
 
-  if (!isProduction || !hasConsent) return null;
+  if (!isProduction) return null;
 
   return (
     <YMInitializer
