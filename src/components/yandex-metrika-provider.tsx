@@ -12,8 +12,6 @@ export const YandexMetrikaProvider = () => {
 
   useEffect(() => {
     if (!pathname || !isProduction) return;
-    if (typeof window === "undefined") return;
-    if (typeof (window as unknown as { ym?: unknown }).ym !== "function") return;
     ym("hit", pathname);
   }, [pathname]);
 
