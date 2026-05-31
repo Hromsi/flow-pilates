@@ -156,7 +156,7 @@ function ContactsAside() {
             >
               <ShieldCheck className="size-4 shrink-0 text-[#dec768] transition-colors group-hover:text-[#d7ecbd]" />
               <span className="underline-offset-4 group-hover:underline">
-                Политика конфиденциальности
+                Политика конфиденциальностиии
               </span>
             </Link>
           </li>
